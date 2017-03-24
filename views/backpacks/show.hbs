@@ -1,4 +1,5 @@
 <h1>{{backpack.backpack_name}}</h1>
+<ul>
   <li>Pencils: {{backpack.pencils}}</li>
   <li>Folders: {{backpack.folders}}</li>
   <li>Notebooks: {{backpack.notebooks}}</li>
@@ -9,5 +10,10 @@
   <li>Glue Sticks:{{backpack.glue_sticks}}</li>
   <li>Backpack Color:{{backpack.backpack_color}}</li>
   <li>Recipient Note: {{backpack.recipient_note}}</li>
+</ul>
+
+<div>
+    <a href="/backpacks/{{backpack.id}}/edit" class="btn btn-primary">Edit Backpack</a>
+</div>
 
 <a href="/backpacks" class="btn btn-default">Main Page</a>
