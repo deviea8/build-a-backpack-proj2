@@ -1,0 +1,13 @@
+<h1>My Backpacks</h1>
+{{backpacks}}
+<ol>
+    {{#each backpacks}}
+    <li>
+        <h1><a href="/backpacks/{{this.id}}">{{this.backpack_color}}</a></h1>
+        <h3>Color: {{this.backpack_color}}</h3>
+    </li>
+    {{/each}}
+</ol>
+
+
+

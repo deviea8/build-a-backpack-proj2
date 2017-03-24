@@ -3,9 +3,16 @@ var router = express.Router();
 
 var Backpack = require('../models/backpack');
 
-// index authors
+// index backpacks
 router.get('/', function(req, res) {
-    res.send('backpacks will be here');
+    Backpack.find()
+        .exec(function(err, backpacks) {
+            if(err) {console.log(err)};
+            console.log(backpacks);
+            res.render('backpacks/index', {
+                backpacks: backpacks
+            });
+        });
 });
 
 module.exports = router;

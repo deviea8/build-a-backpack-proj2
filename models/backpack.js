@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 mongoose.promise = global.Promise;
 
 var BackpackSchema = new Schema({
+    backpack_name: String,
     pencils: Number,
     folders: Number,
     notebooks: Number,
@@ -25,8 +26,8 @@ BackpackSchema.pre('save', function(next){
     next();
 });
 
-BackpackSchema.virtual('backpackColor').get(function () {
-    return this.backpack_color;
+BackpackSchema.virtual('backpackName').get(function () {
+    return this.backpack_name;
 });
 
 module.exports = mongoose.model("Backpack", BackpackSchema);
