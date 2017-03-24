@@ -68,11 +68,13 @@ router.patch('/:id', function(req, res) {
         glue_sticks: req.body.glue_sticks,
         backpack_color: req.body.backpack_color,
         recipient_note: req.body.recipient_note
-    })
+    }, {new: true})
         .exec(function(err, backpack) {
             if (err) { console.log(err); }
             console.log(backpack);
-            res.send(backpack);
+            res.render('backpacks/show', {
+              backpack: backpack
+            });
         });
 });
 
