@@ -78,6 +78,16 @@ router.patch('/:id', function(req, res) {
         });
 });
 
+// delete backpack
+router.delete('/:id', function(req, res) {
+    Backpack.findByIdAndRemove(req.params.id)
+        .exec(function(err, backpack) {
+            if (err) { console.log(err); }
+            console.log('Backpack deleted.');
+            res.redirect('/backpacks');
+        });
+});
+
 
 // show individual backpack
 router.get('/:id', function(req, res) {

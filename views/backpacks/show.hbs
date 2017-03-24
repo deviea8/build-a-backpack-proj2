@@ -16,4 +16,8 @@
     <a href="/backpacks/{{backpack.id}}/edit" class="btn btn-primary">Edit Backpack</a>
 </div>
 
+<form action="/backpacks/{{backpack.id}}?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE" class="btn btn-danger" />
+</form>
+
 <a href="/backpacks" class="btn btn-default">Main Page</a>
