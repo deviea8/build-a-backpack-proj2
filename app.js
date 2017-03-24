@@ -12,8 +12,9 @@ var db = require('./db');
 mongoose.connect('mongodb://localhost/build-a-backpack');
 
 
-var index = require('./routes/index_controller');
-var users = require('./routes/users_controller');
+var indexController = require('./routes/index_controller');
+var userController = require('./routes/users_controller');
+var backpackController = require('./routes/backpack_controller');
 
 var app = express();
 
@@ -36,8 +37,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', indexController);
+app.use('/users', userController);
+app.use('/backpacks', backpackController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
