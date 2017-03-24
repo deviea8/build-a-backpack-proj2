@@ -54,6 +54,28 @@ router.get('/:id/edit', function(req,res) {
     });
 });
 
+// update/patch backpack
+router.patch('/:id', function(req, res) {
+    Backpack.findByIdAndUpdate(req.params.id, {
+        backpack_name: req.body.backpack_name,
+        pencils: req.body.pencils,
+        folders: req.body.folders,
+        notebooks: req.body.notebooks,
+        scissors: req.body.scissors,
+        erasers: req.body.erasers,
+        colored_pencils: req.body.colored_pencils,
+        markers: req.body.markers,
+        glue_sticks: req.body.glue_sticks,
+        backpack_color: req.body.backpack_color,
+        recipient_note: req.body.recipient_note
+    })
+        .exec(function(err, backpack) {
+            if (err) { console.log(err); }
+            console.log(backpack);
+            res.send(backpack);
+        });
+});
+
 
 // show individual backpack
 router.get('/:id', function(req, res) {
