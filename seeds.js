@@ -7,6 +7,7 @@ Backpack.remove({}, function(err) {
 });
 
 var backpackOne = new Backpack({
+    backpack_name: 'Blue backpack',
     pencils: 2,
     folders: 2,
     notebooks: 3,
@@ -20,6 +21,7 @@ var backpackOne = new Backpack({
 });
 
 var backpackTwo = new Backpack({
+    backpack_name: 'Backpack for high school student',
     pencils: 3,
     folders: 3,
     notebooks: 2,
