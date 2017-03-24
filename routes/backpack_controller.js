@@ -15,4 +15,20 @@ router.get('/', function(req, res) {
         });
 });
 
+
+// show individual backpack
+router.get('/:id', function(req, res) {
+    Backpack.findById(req.params.id)
+        .exec(function(err, backpack) {
+            if(err) console.log(err);
+            console.log(backpack);
+            res.render('backpacks/show', {
+                backpack: backpack
+            });
+        });
+});
+
+
+
+
 module.exports = router;
