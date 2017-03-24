@@ -39,7 +39,18 @@ router.post('/', function(req, res) {
     backpack.save(function(err, backpack){
         if (err) { console.log(err); }
         console.log(backpack);
-        res.send(backpack);
+        res.redirect('/backpacks');
+    });
+});
+
+// edit backpacks
+router.get('/:id/edit', function(req,res) {
+    Backpack.findById(req.params.id)
+    .exec(function(err, backpack) {
+        if (err) { console.log(err); }
+        res.render('backpacks/edit', {
+            backpack: backpack
+        });
     });
 });
 
