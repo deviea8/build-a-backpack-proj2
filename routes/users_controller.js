@@ -3,6 +3,7 @@ var router = express.Router({mergeParams: true});
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js')
 
+// User index - show all users
 router.get('/', function(req, res) {
   console.log(req.session)
   User.find({})
@@ -15,10 +16,13 @@ router.get('/', function(req, res) {
   });
 })
 
+// Signup page
 router.get('/signup', function(req, res){
   res.render('users/signup.hbs')
 });
 
+
+// User show page
 router.get('/:id', authHelpers.authorize, function(req, res) {
   User.findById(req.params.id)
   .exec(function(err, user) {
@@ -29,10 +33,13 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
   });
 })
 
+// Create new user / complete registration
 router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     email: req.body.email,
-    password_digest: res.hashedPassword
+    password: res.hashedPassword
   });
 
   user.save(function(err, user){
