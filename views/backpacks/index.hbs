@@ -2,7 +2,7 @@
   <div>
   {{#each backpacks}}
     <div><img src=backpacks.image></div>
-    <div><a href="/users/{{../user.id}}/backpacks/{{this.id}}">{{this.backpack_name}}</a></div>
+    <div><a href="/org/{{../orgId}}/users/{{../user.id}}/backpacks/{{this.id}}">{{this.backpack_name}}</a></div>
     <div>Backpack Color:{{this.backpack_color}}</div>
   {{/each}}
   </div>

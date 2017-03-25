@@ -64,7 +64,8 @@ router.get('/:backpackId/edit', function(req,res) {
         if (err) { console.log(err); }
         res.render('backpacks/edit', {
             backpack: backpack,
-            userId: req.params.id
+            userId: req.params.id,
+            orgId: req.params.orgId
         });
     });
 });
@@ -122,7 +123,8 @@ router.get('/:backpackId', function(req, res) {
             if(err) console.log(err);
             res.render('backpacks/show', {
                 backpack: backpack,
-                userId: req.params.id
+                userId: req.params.id,
+                orgId: req.params.orgId
             });
         });
 });
