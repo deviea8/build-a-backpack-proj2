@@ -47,7 +47,7 @@ router.post('/', function createNewBackpack(req, res) {
         newBackpack.save();
         user.backpacks.push(newBackpack)
         user.save();
-        res.redirect('/users/' + userId + '/backpacks/edit');
+        res.redirect('/users/' + userId + '/backpacks/');
     });
 });
 

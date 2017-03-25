@@ -1,9 +1,26 @@
-{{backpack}}
 <h1>{{backpack.backpack_name}}</h1>
 
-<div>
-    <a href="/backpacks/{{backpack.id}}/edit" class="btn btn-primary">Edit Backpack</a>
-</div>
+  <div>
+      <a href="/backpacks/{{backpack.id}}/edit" class="btn btn-primary">Edit Backpack</a>
+  </div>
+
+<h2>Contents</h2>
+  <ul>
+    <li>Pencils: {{backpack.pencils}}</li>
+    <li>Folders: {{backpack.folders}}</li>
+    <li>Notebooks: {{backpack.notebooks}}</li>
+    <li>Scissors: {{backpack.scissors}}</li>
+    <li>Erasers: {{backpack.erasers}}</li>
+    <li>Colored Pencils: {{backpack.colored_pencils}}</li>
+    <li>Markers: {{backpack.markers}}</li>
+    <li>Glue Sticks: {{backpack.glue_sticks}}</li>
+  </ul>
+
+<h3>Backpack Color</h3>
+{{backpack.backpack_color}}
+
+<h3>Message to Recipient</h3>
+{{backpack.recipient_note}}
 
 <form action="/backpacks/{{backpack.id}}?_method=DELETE" method="POST">
     <input type="submit" value="DELETE" class="btn btn-danger" />
