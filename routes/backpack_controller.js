@@ -3,6 +3,7 @@ var router = express.Router({mergeParams: true});
 var authHelpers = require('../helpers/auth.js');
 var Backpack = require('../models/backpack');
 var User = require('../models/user');
+var Org = require('../models/org');
 var mongoose = require("mongoose");
 
 
@@ -14,7 +15,8 @@ router.get('/', authHelpers.authorize, function(req, res){
             res.render('backpacks/index', {
                 user: user,
                 backpacks: user.backpacks,
-                userId: user.id
+                userId: user.id,
+                orgId: user.org
             });
     });
 });
@@ -22,7 +24,8 @@ router.get('/', authHelpers.authorize, function(req, res){
 // New backpack (form page)
 router.get('/new', function(req, res) {
     res.render('backpacks/new', {
-        userId: req.params.id
+        userId: req.params.id,
+        orgId: req.params.orgId
     });
 });
 
@@ -46,10 +49,11 @@ router.post('/', function createNewBackpack(req, res) {
             recipient_note: req.body.recipient_note
         });
         var userId = req.params.id;
+        var orgId = req.params.orgId;
         newBackpack.save();
         user.backpacks.push(newBackpack);
         user.save();
-        res.redirect('/users/' + userId + '/backpacks/');
+        res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks/');
     });
 });
 
