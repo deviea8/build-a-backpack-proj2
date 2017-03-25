@@ -14,9 +14,9 @@ router.get('/', function(req, res){
             res.render('backpacks/index', {
                 user: user,
                 backpacks: user.backpacks
-            })
-    })
-})
+            });
+    });
+});
 
 // New backpack (form page)
 router.get('/new', function(req, res) {
@@ -24,6 +24,7 @@ router.get('/new', function(req, res) {
         userId: req.params.id
     });
 });
+
 
 // Create/post backpack
 router.post('/', function createNewBackpack(req, res) {
@@ -45,19 +46,20 @@ router.post('/', function createNewBackpack(req, res) {
         });
         var userId = req.params.id;
         newBackpack.save();
-        user.backpacks.push(newBackpack)
+        user.backpacks.push(newBackpack);
         user.save();
         res.redirect('/users/' + userId + '/backpacks/');
     });
 });
 
-// Edit backpacks
+// Edit individual backpack
 router.get('/:backpackId/edit', function(req,res) {
-    Backpack.findById(req.params.id)
+    Backpack.findById(req.params.backpackId)
     .exec(function(err, backpack) {
         if (err) { console.log(err); }
         res.render('backpacks/edit', {
-            backpack: backpack
+            backpack: backpack,
+            userId: req.params.id
         });
     });
 });
@@ -65,7 +67,7 @@ router.get('/:backpackId/edit', function(req,res) {
 
 // Update/patch backpack
 router.patch('/:backpackId', function(req, res) {
-    Backpack.findByIdAndUpdate(req.params.id, {
+    Backpack.findByIdAndUpdate(req.params.backpackId, {
         backpack_name: req.body.backpack_name,
         pencils: req.body.pencils,
         folders: req.body.folders,
@@ -105,7 +107,8 @@ router.get('/:backpackId', function(req, res) {
         .exec(function(err, backpack) {
             if(err) console.log(err);
             res.render('backpacks/show', {
-                backpack: backpack
+                backpack: backpack,
+                userId: req.params.id
             });
         });
 });
