@@ -29,7 +29,7 @@ router.get('/new', function(req, res) {
 router.post('/', function createNewBackpack(req, res) {
     User.findById(req.params.id)
     .exec(function(err,user){
-        if(err) {cosole.log(err)}
+        if(err) {console.log(err)}
         var newBackpack = new Backpack({
             backpack_name: req.body.backpack_name,
             pencils: req.body.pencils,
@@ -44,11 +44,9 @@ router.post('/', function createNewBackpack(req, res) {
             recipient_note: req.body.recipient_note
         });
         var userId = req.params.id;
+        newBackpack.save();
         user.backpacks.push(newBackpack)
-        user.save(function(err){
-            if(err) {console.log(err)};
-            console.log(newBackpack);
-        });
+        user.save();
         res.redirect('/users/' + userId + '/backpacks/edit');
     });
 });
@@ -89,6 +87,7 @@ router.patch('/:backpackId', function(req, res) {
         });
 });
 
+
 // Delete backpack
 router.delete('/:backpackId', function(req, res) {
     Backpack.findByIdAndRemove(req.params.id)
@@ -102,13 +101,11 @@ router.delete('/:backpackId', function(req, res) {
 
 // Show individual backpack
 router.get('/:backpackId', function(req, res) {
-    Backpack.findById(req.params.id)
+    Backpack.findById(req.params.backpackId)
         .exec(function(err, backpack) {
             if(err) console.log(err);
-            console.log(backpack);
             res.render('backpacks/show', {
-                backpack: backpack,
-                userId: req.params.id
+                backpack: backpack
             });
         });
 });
