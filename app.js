@@ -40,7 +40,7 @@ app.use(session({
 
 app.use('/', indexController);
 app.use('/users', userController);
-app.use('/backpacks', backpackController);
+app.use('/users/:id/backpacks', backpackController);
 app.use('/sessions', sessionsController);
 
 // catch 404 and forward to error handler

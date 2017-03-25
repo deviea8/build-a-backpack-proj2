@@ -18,7 +18,7 @@ var loginUser = function(req, res, next) {
   .then(function(foundUser){
     if (foundUser == null) {
       res.json({status: 401, data: "unauthorized"})
-    } else if (bcrypt.compareSync(password, foundUser.password_digest)) {
+    } else if (bcrypt.compareSync(password, foundUser.password)) {
       req.session.currentUser = foundUser;
     }
     next()

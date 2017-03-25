@@ -1,27 +1,17 @@
 var express = require('express');
-var router = express.Router();
-
+var router = express.Router({mergeParams: true});
+var authHelpers = require('../helpers/auth.js');
 var Backpack = require('../models/backpack');
-
-// index backpacks
-router.get('/', function(req, res) {
-    Backpack.find()
-        .exec(function(err, backpacks) {
-            if(err) {console.log(err)};
-            console.log(backpacks);
-            res.render('backpacks/index', {
-                backpacks: backpacks
-            });
-        });
-});
+var User = require('../models/user');
+var mongoose = require("mongoose");
 
 
-// new backpack (form page)
+// New backpack (form page)
 router.get('/new', function(req, res) {
     res.render('backpacks/new');
 });
 
-// create/post backpack
+// Create/post backpack
 router.post('/', function(req, res) {
     var backpack = new Backpack({
         backpack_name: req.body.backpack_name,
@@ -43,8 +33,8 @@ router.post('/', function(req, res) {
     });
 });
 
-// edit backpacks
-router.get('/:id/edit', function(req,res) {
+// Edit backpacks
+router.get('/:backpackId/edit', function(req,res) {
     Backpack.findById(req.params.id)
     .exec(function(err, backpack) {
         if (err) { console.log(err); }
@@ -54,8 +44,8 @@ router.get('/:id/edit', function(req,res) {
     });
 });
 
-// update/patch backpack
-router.patch('/:id', function(req, res) {
+// Update/patch backpack
+router.patch('/:backpackId', function(req, res) {
     Backpack.findByIdAndUpdate(req.params.id, {
         backpack_name: req.body.backpack_name,
         pencils: req.body.pencils,
@@ -78,8 +68,8 @@ router.patch('/:id', function(req, res) {
         });
 });
 
-// delete backpack
-router.delete('/:id', function(req, res) {
+// Delete backpack
+router.delete('/:backpackId', function(req, res) {
     Backpack.findByIdAndRemove(req.params.id)
         .exec(function(err, backpack) {
             if (err) { console.log(err); }
@@ -89,8 +79,8 @@ router.delete('/:id', function(req, res) {
 });
 
 
-// show individual backpack
-router.get('/:id', function(req, res) {
+// Show individual backpack
+router.get('/:backpackId', function(req, res) {
     Backpack.findById(req.params.id)
         .exec(function(err, backpack) {
             if(err) console.log(err);
@@ -100,8 +90,6 @@ router.get('/:id', function(req, res) {
             });
         });
 });
-
-
 
 
 module.exports = router;
