@@ -33,7 +33,7 @@ var UserSchema = new Schema({
     created_at: Date,
     updated_at: Date,
     admin: Boolean,
-    org_id: String
+    org: String
 });
 
 // Organization schema

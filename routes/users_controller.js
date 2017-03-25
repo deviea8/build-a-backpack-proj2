@@ -53,7 +53,8 @@ router.post('/', authHelpers.createSecure, function(req, res){
     city: req.body.city,
     state: req.body.state,
     zip_code: req.body.zip_code,
-    password: res.hashedPassword
+    password: res.hashedPassword,
+    org: req.body.org
   });
 
   user.save(function(err, user){

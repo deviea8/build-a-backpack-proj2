@@ -5,14 +5,18 @@ var authHelpers = require('../helpers/auth.js')
 
 // Render login page
 router.get('/login', function(req, res) {
-  res.render('users/login')
+  var orgId = req.params.orgId
+  res.render('users/login', {
+    orgId: orgId
+  })
 });
 
 // Authorize & log in user
 router.post('/login', authHelpers.loginUser, function(req, res){
   console.log(req.session);
-  var userId = req.session.currentUser.id
-  res.redirect('/users/' + userId + '/backpacks')
+  var orgId = req.session.currentUser.org;
+  var userId = req.session.currentUser.id;
+  res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks')
 });
 
 // End session
