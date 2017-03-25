@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
     if (err) { console.log(err); }
     res.send('view all organizations who are running drives, ability to click on each to learn more')
   });
-})
+});
 
 // Organization signup page
 router.get('/signup', function(req, res){
@@ -28,7 +28,8 @@ router.get('/:orgId', function(req, res) {
     console.log(org);
     // res.render('user/show.hbs', { user: user } );
     res.send('individual org show page. include info and user signup form here')
-})
+  });
+});
 
 
 // Create new org / complete org setup - do I need auth on this?
