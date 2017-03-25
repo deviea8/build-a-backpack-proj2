@@ -44,7 +44,7 @@ app.use('/', indexController);
 app.use('/users', userController);
 app.use('/users/:id/backpacks', backpackController);
 app.use('/sessions', sessionsController);
-app.use('/organizations', orgController);
+app.use('/org', orgController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

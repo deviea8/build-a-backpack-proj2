@@ -39,6 +39,9 @@ var UserSchema = new Schema({
 // Organization schema
 var OrgSchema = new Schema({
     org_name: String,
+    org_type: String,
+    location: String,
+    description: String,
     users: [UserSchema]
 });
 

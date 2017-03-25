@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/build-a-backpack');
 var User = require('../models/user');
+var Org = require('../models/org');
 var Backpack = require('../models/backpack');
 
 // Use native promises
@@ -104,6 +105,33 @@ userOne.save(function(err) {
 userTwo.save(function(err) {
   if (err) console.log(err);
   console.log('User two created!');
+});
+
+// Org data
+
+var orgOne = new Org({
+    org_name: 'Atlanta First UMC',
+    org_type: 'church',
+    location: 'Atlanta, GA',
+    description: 'Atlanta First is an urban church located in the heart of downtown Atlanta'
+});
+
+var orgTwo = new Org({
+    org_name: 'West Market Street UMC',
+    org_type: 'church',
+    location: 'Greensboro, NC',
+    description: 'West Market Street UMC is a Methodist church'
+});
+
+
+orgOne.save(function(err) {
+  if (err) console.log(err);
+  console.log('Org one created!');
+});
+
+orgTwo.save(function(err) {
+  if (err) console.log(err);
+  console.log('Org two created!');
 });
 
 

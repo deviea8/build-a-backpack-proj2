@@ -5,50 +5,45 @@ var Org = require('../models/org.js');
 var Backpack = require('../models/backpack.js');
 var authHelpers = require('../helpers/auth.js')
 
-// Org index - show all organizations
+// Organization index - show all organizations
 router.get('/', function(req, res) {
   Org.find()
   .exec(function(err, orgs){
     if (err) { console.log(err); }
-    res.send('org index')
+    res.send('view all organizations who are running drives, ability to click on each to learn more')
   });
 })
 
-// Signup page
+// Organization signup page
 router.get('/signup', function(req, res){
-  res.render('users/signup.hbs')
+  res.send('Register your organization for a backpack drive. Include org signup form here')
 });
 
 
-// User show page
-router.get('/:id', authHelpers.authorize, function(req, res) {
-  User.findById(req.params.id)
-  .exec(function(err, user) {
+// Individual organization show page
+router.get('/:orgId', function(req, res) {
+  Org.findById(req.params.orgId)
+  .exec(function(err, org) {
     if (err) console.log(err);
-    console.log(user);
+    console.log(org);
     // res.render('user/show.hbs', { user: user } );
-    res.render('users/show.hbs', { user } );
-  });
+    res.send('individual org show page. include info and user signup form here')
 })
 
-// Create new user / complete registration
-router.post('/', authHelpers.createSecure, function(req, res){
-  var user = new User({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    organization: req.body.organization,
-    street: req.body.street,
-    city: req.body.city,
-    state: req.body.state,
-    zip_code: req.body.zip_code,
-    password: res.hashedPassword
+
+// Create new org / complete org setup - do I need auth on this?
+router.post('/', function(req, res){
+  var newOrg = new Org({
+    org_name: req.body.org_name,
+    org_type: req.body.org_type,
+    location: req.body.location,
+    description: req.body.description
   });
 
-  user.save(function(err, user){
+  newOrg.save(function(err, org){
     if (err) console.log(err);
-    console.log(user);
-    res.redirect('/sessions/login');
+    console.log(org);
+    res.redirect('/org');
   });
 });
 
