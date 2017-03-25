@@ -97,7 +97,7 @@ router.patch('/:backpackId', function(req, res) {
 });
 
 
-// Delete backpack - Danny said there may be a better way to do this - ask Liam
+// Delete backpack - Having some issues with this - after editing a backpack the edit and delete buttons don't work anymore
 router.delete("/:backpackId", function(req, res) {
     console.log(req.params.id)
     console.log(req.params.orgId)
