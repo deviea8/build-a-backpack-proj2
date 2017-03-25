@@ -13,7 +13,8 @@ router.get('/', function(req, res){
         if(err) {console.log(err)}
             res.render('backpacks/index', {
                 user: user,
-                backpacks: user.backpacks
+                backpacks: user.backpacks,
+                userId: user.id
             });
     });
 });
@@ -84,7 +85,8 @@ router.patch('/:backpackId', function(req, res) {
             if (err) { console.log(err); }
             console.log(backpack);
             res.render('backpacks/show', {
-              backpack: backpack
+              backpack: backpack,
+              userId: req.params.id
             });
         });
 });
