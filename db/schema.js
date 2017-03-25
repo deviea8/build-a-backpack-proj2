@@ -15,8 +15,7 @@ var BackpackSchema = new Schema({
     markers: Number,
     glue_sticks: Number,
     backpack_color: String,
-    recipient_note: String,
-    image: String
+    recipient_note: String
 });
 
 // User schema

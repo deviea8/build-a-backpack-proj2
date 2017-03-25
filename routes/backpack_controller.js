@@ -99,6 +99,8 @@ router.patch('/:backpackId', function(req, res) {
 
 // Delete backpack - Danny said there may be a better way to do this - ask Liam
 router.delete("/:backpackId", function(req, res) {
+    console.log(req.params.id)
+    console.log(req.params.orgId)
     User.findByIdAndUpdate(req.params.id, {
         $pull: {
             backpacks: {_id: req.params.backpackId}
@@ -110,7 +112,7 @@ router.delete("/:backpackId", function(req, res) {
     Backpack.findByIdAndRemove(req.params.backpackId)
         .exec(function(err, backpack) {
             if (err) { console.log(err); }
-            res.redirect('/users/' + req.params.id + '/backpacks');
+            res.redirect('/org/' + req.params.orgId + '/users/' + req.params.id + '/backpacks');
         });
 });
 
