@@ -39,6 +39,11 @@ router.post('/', authHelpers.createSecure, function(req, res){
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
+    organization: req.body.organization,
+    street: req.body.street,
+    city: req.body.city,
+    state: req.body.state,
+    zip_code: req.body.zip_code,
     password: res.hashedPassword
   });
 
