@@ -41,8 +41,8 @@ app.use(session({
 
 // Designate routes - need to adjust these for new controller
 app.use('/', indexController);
-app.use('/users', userController);
-app.use('/users/:id/backpacks', backpackController);
+app.use('/org/:orgId/users', userController);
+app.use('/org/:orgId/users/:id/backpacks', backpackController);
 app.use('/sessions', sessionsController);
 app.use('/org', orgController);
 

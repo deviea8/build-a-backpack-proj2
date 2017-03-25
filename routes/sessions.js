@@ -10,7 +10,7 @@ router.get('/login', function(req, res) {
 
 // Authorize & log in user
 router.post('/login', authHelpers.loginUser, function(req, res){
-  console.log(req.session)
+  console.log(req.session);
   var userId = req.session.currentUser.id
   res.redirect('/users/' + userId + '/backpacks')
 });

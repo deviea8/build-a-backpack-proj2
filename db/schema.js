@@ -21,7 +21,6 @@ var BackpackSchema = new Schema({
 
 // User schema
 var UserSchema = new Schema({
-    organization: String,
     first_name: String,
     last_name: String,
     email: String,
@@ -33,7 +32,8 @@ var UserSchema = new Schema({
     backpacks: [BackpackSchema],
     created_at: Date,
     updated_at: Date,
-    admin: Boolean
+    admin: Boolean,
+    org_id: String
 });
 
 // Organization schema

@@ -1,9 +1,10 @@
 <h1>Sign Up</h1>
+Organization: {{orgName}}
 
-<form action="/users" method="post">
+<form action="/org/{{orgId}}/users/" method="post">
   <div>
-    <label for="organization">Your Organization</label>
-    <input type="text" name="organization">
+    <label for="org_id">Organization ID</label>
+    <input type="text" name="org_id" value="{{orgId}}" disabled>
   </div>
 
   <div>

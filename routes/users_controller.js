@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 var User = require('../models/user.js');
+var Org = require('../models/org.js');
 var authHelpers = require('../helpers/auth.js')
 
 // User index - show all users
@@ -18,7 +19,15 @@ router.get('/', function(req, res) {
 
 // Signup page
 router.get('/signup', function(req, res){
-  res.render('users/signup.hbs')
+  var thisOrg = Org.findById(req.params.orgId)
+    .exec(function(err,org){
+      if(err) {console.log(err)};
+      console.log(org);
+      res.render('users/signup', {
+        orgId: req.params.orgId,
+        orgName: org.org_name
+      });
+    });
 });
 
 
