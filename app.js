@@ -16,6 +16,7 @@ var indexController = require('./routes/index_controller');
 var userController = require('./routes/users_controller');
 var backpackController = require('./routes/backpack_controller');
 var sessionsController = require('./routes/sessions.js');
+var orgController = require('./routes/org_controller.js');
 
 var app = express();
 
@@ -38,10 +39,12 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Designate routes - need to adjust these for new controller
 app.use('/', indexController);
 app.use('/users', userController);
 app.use('/users/:id/backpacks', backpackController);
 app.use('/sessions', sessionsController);
+app.use('/organizations', orgController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

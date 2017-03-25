@@ -4,7 +4,6 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 // Backpack schema
-
 var BackpackSchema = new Schema({
     backpack_name: String,
     pencils: Number,
@@ -16,11 +15,11 @@ var BackpackSchema = new Schema({
     markers: Number,
     glue_sticks: Number,
     backpack_color: String,
-    recipient_note: String
+    recipient_note: String,
+    image: String
 });
 
 // User schema
-
 var UserSchema = new Schema({
     organization: String,
     first_name: String,
@@ -33,11 +32,17 @@ var UserSchema = new Schema({
     password: String,
     backpacks: [BackpackSchema],
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
+    admin: Boolean
+});
+
+// Organization schema
+var OrgSchema = new Schema({
+    org_name: String,
+    users: [UserSchema]
 });
 
 // Pre functions
-
 UserSchema.pre('save', function(next){
     now = new Date();
     this.updated_at = now;
@@ -56,14 +61,24 @@ BackpackSchema.pre('save', function(next){
     next();
 });
 
+OrgSchema.pre('save', function(next){
+    now = new Date();
+    this.updated_at = now;
+    if ( !this.created_at ) {
+        this.created_at = now;
+    }
+    next();
+});
+
 
 // Models
-
 var UserModel = mongoose.model('User', UserSchema);
 var BackpackModel = mongoose.model("Backpack", BackpackSchema);
+var OrgModel = mongoose.model("Org", OrgSchema);
 
 
 module.exports = {
   User: UserModel,
-  Backpack: BackpackModel
+  Backpack: BackpackModel,
+  Org: OrgModel
 };
