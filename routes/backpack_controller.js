@@ -64,6 +64,7 @@ router.get('/:backpackId/edit', function(req,res) {
     });
 });
 
+
 // Update/patch backpack
 router.patch('/:backpackId', function(req, res) {
     Backpack.findByIdAndUpdate(req.params.id, {
@@ -106,7 +107,8 @@ router.get('/:backpackId', function(req, res) {
             if(err) console.log(err);
             console.log(backpack);
             res.render('backpacks/show', {
-                backpack: backpack
+                backpack: backpack,
+                userId: req.params.id
             });
         });
 });
