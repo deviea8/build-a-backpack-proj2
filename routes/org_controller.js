@@ -10,7 +10,9 @@ router.get('/', function(req, res) {
   Org.find()
   .exec(function(err, orgs){
     if (err) { console.log(err); }
-    res.send('view all organizations who are running drives, ability to click on each to learn more')
+    res.render('orgs/index', {
+      orgs: orgs
+    });
   });
 });
 
@@ -27,7 +29,9 @@ router.get('/:orgId', function(req, res) {
     if (err) console.log(err);
     console.log(org);
     // res.render('user/show.hbs', { user: user } );
-    res.send('individual org show page. include info and user signup form here')
+    res.render('orgs/show', {
+      org: org
+    });
   });
 });
 
