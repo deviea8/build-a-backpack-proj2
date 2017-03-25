@@ -6,8 +6,8 @@ var User = require('../models/user');
 var mongoose = require("mongoose");
 
 
-// Backpack index - add auth here later!
-router.get('/', function(req, res){
+// Backpack index
+router.get('/', authHelpers.authorize, function(req, res){
     User.findById(req.params.id)
     .exec(function(err,user){
         if(err) {console.log(err)}
