@@ -8,6 +8,7 @@ function createSecure(req, res, next) {
   next()
 }
 
+// Check for match in db for logging in user
 var loginUser = function(req, res, next) {
   var email = req.body.email;
   var password = req.body.password;
@@ -27,6 +28,7 @@ var loginUser = function(req, res, next) {
   });
 }
 
+// Authorize user to have access
 var authorize = function(req, res, next) {
   var currentUser = req.session.currentUser
 

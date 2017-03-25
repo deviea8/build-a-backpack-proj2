@@ -1,8 +1,11 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/build-a-backpack');
-var Backpack = require("/models/backpack.js");
-var User = require("/models/user.js");
+var User = require('../models/user');
+var Backpack = require('../models/backpack');
+
+// Use native promises
 mongoose.promise = global.Promise;
+
 Backpack.remove({}, function(err) {
     console.log(err);
 });
@@ -91,6 +94,16 @@ var userTwo = new User({
         backpack_color: 'green',
         recipient_note: 'Puppies'
     }
+});
+
+userOne.save(function(err) {
+  if (err) console.log(err);
+  console.log('User one created!');
+});
+
+userTwo.save(function(err) {
+  if (err) console.log(err);
+  console.log('User two created!');
 });
 
 
