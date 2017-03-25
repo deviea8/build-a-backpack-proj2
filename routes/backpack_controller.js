@@ -6,6 +6,18 @@ var User = require('../models/user');
 var mongoose = require("mongoose");
 
 
+// Backpack index - add auth here later!
+router.get('/', function(req, res){
+    User.findById(req.params.id)
+    .exec(function(err,user){
+        if(err) {console.log(err)}
+            res.render('backpacks/index', {
+                user: user,
+                backpacks: user.backpacks
+            })
+    })
+})
+
 // New backpack (form page)
 router.get('/new', function(req, res) {
     res.render('backpacks/new', {

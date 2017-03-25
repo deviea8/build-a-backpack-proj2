@@ -1,12 +1,10 @@
-<h1>My Backpacks</h1>
-<ol>
-    {{#each backpacks}}
-    <li>
-        <h1><a href="/backpacks/{{this.id}}">Backpack {{@index}}</a></h1>
-        <h3>Color: {{this.backpack_color}}</h3>
-    </li>
-    {{/each}}
-</ol>
+<h1>{{user.first_name}}'s Backpacks</h1>
+  <div>
+  {{#each user.backpacks}}
+    <div>Backpack Name: {{this.backpack_name}}</div>
+    <div>Backpack Color:{{this.backpack_color}}</div>
+  {{/each}}
+  </div>
 
 <a href="/backpacks/new" class="btn btn-default">Build a New Backpack</a>
 
