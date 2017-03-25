@@ -16,9 +16,9 @@ router.get('/', function(req, res) {
   });
 });
 
-// Organization signup page
-router.get('/signup', function(req, res){
-  res.send('Register your organization for a backpack drive. Include org signup form here')
+// Create new org page
+router.get('/new', function(req, res){
+  res.render('orgs/new');
 });
 
 
