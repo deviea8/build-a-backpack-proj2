@@ -1,10 +1,10 @@
 <h1>{{user.first_name}}'s Backpacks</h1>
   <div>
   {{#each user.backpacks}}
-    <div>Backpack Name: {{this.backpack_name}}</div>
+    <div><a href="/users/{{../user.id}}/backpacks/{{this.id}}">{{this.backpack_name}}</a></div>
     <div>Backpack Color:{{this.backpack_color}}</div>
   {{/each}}
   </div>
 
-<a href="/backpacks/new" class="btn btn-default">Build a New Backpack</a>
+<a href="/users/{{user.id}}/backpacks/new" class="btn btn-default">Build a New Backpack</a>
 
