@@ -11,10 +11,11 @@ var methodOverride = require('method-override');
 var db = require('./db');
 mongoose.connect('mongodb://localhost/build-a-backpack');
 
-
+//routes
 var indexController = require('./routes/index_controller');
 var userController = require('./routes/users_controller');
 var backpackController = require('./routes/backpack_controller');
+var sessionsController = require('./routes/sessions.js');
 
 var app = express();
 
