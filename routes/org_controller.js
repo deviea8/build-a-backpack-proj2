@@ -37,7 +37,7 @@ router.get('/:orgId', function(req, res) {
 });
 
 
-// Create new org / complete org setup - do I need auth on this?
+// Create new org / complete org setup
 router.post('/', function(req, res){
   var newOrg = new Org({
     org_name: req.body.org_name,
@@ -47,9 +47,10 @@ router.post('/', function(req, res){
   });
 
   newOrg.save(function(err, org){
+    newOrgId = newOrg.id;
     if (err) console.log(err);
     console.log(org);
-    res.redirect('/org');
+    res.redirect('/org/' + newOrgId);
   });
 });
 
