@@ -1,8 +1,30 @@
-body {
+.main-container {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.body {
+  padding: 50px;
+  border: 5px solid gray;
+  margin-top: 10px;
+}
+
 a {
   color: #00B7FF;
+}
+
+.top-nav {
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 300px;
+  height: 65px;
+  flex-direction: row;
+}
+
+.nav-links {
+  flex-direction: row;
 }
