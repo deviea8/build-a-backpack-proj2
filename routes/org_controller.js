@@ -50,7 +50,7 @@ router.post('/', function(req, res){
     newOrgId = newOrg.id;
     if (err) console.log(err);
     console.log(org);
-    res.redirect('/org/' + newOrgId);
+    res.redirect('/org/' + newOrgId + '/users/signup-admin');
   });
 });
 
