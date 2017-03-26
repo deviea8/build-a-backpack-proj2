@@ -31,19 +31,30 @@ var loginUser = function(req, res, next) {
 // Authorize user to have access
 var authorize = function(req, res, next) {
   var currentUser = req.session.currentUser
-
-  // THIS ASSUMES THAT EVERY :id refers to the user _id
-  // needs to check if the current user doesn't exist, if it does then make
-  // sure that the id of the logged in user and the id of the route match
-  if (!currentUser || currentUser._id !== req.params.id ) {
-    // customize
-    // res.render('errors/401.hbs')
-    // res.redirect('/users')
+  if (currentUser.admin === true) {
+    next()
+  } else if (!currentUser || currentUser._id !== req.params.id ) {
     res.send({status: 401})
   } else {
     next()
   }
 };
+
+// Allow only admins access - NEED TO FIX!!!
+// var adminOnly = function(req, res, next) {
+//   var currentUserId = req.params.id;
+//   User.findById(currentUserId)
+//     .exec(function(err,user){
+//       if(err) {
+//         console.log(err)
+//       } else if(user.admin === true) {
+//         next()
+//       } else {
+//         res.send("Sorry, only admins can view this page.");
+//       }
+//     });
+//   };
+
 
 module.exports = {
   createSecure: createSecure,

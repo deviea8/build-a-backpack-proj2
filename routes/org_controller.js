@@ -22,6 +22,7 @@ router.get('/new', function(req, res){
 });
 
 
+
 // Individual organization show page
 router.get('/:orgId', function(req, res) {
   Org.findById(req.params.orgId)

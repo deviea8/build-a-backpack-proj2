@@ -1,3 +1,19 @@
-<h1>Admin Dashboard</h1>
-{{user}}
-{{org}}
+<h1>{{org.org_name}}'s Backpack Drive Dashboard</h1>
+View All Pledges
+<br>
+View All Backpacks
+<br>
+<h4>{{org.org_name}} Pledgers</h4>
+  <div>
+  {{#each org.users}}
+  <div class="dashboard-donor-info">
+  <a href="/org/{{../org.id}}/users/{{this.id}}/backpacks">{{this.first_name}} {{this.last_name}} {{this.email}}</a>
+  Number of Backpacks Pledged: {{this.backpacks.length}}
+  </div>
+
+  {{/each}}
+  </div>
+
+  <div class="dashboard-shopping-list">
+
+  </div>

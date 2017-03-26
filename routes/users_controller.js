@@ -17,6 +17,7 @@ router.get('/', function(req, res) {
   });
 })
 
+
 // Signup page - donors
 router.get('/signup', function(req, res){
   var thisOrg = Org.findById(req.params.orgId)
@@ -55,6 +56,19 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
     res.render('users/show.hbs', { user } );
   });
 })
+
+
+// Admin dashboard page - ADD ADMIN ONLY!!!!
+router.get('/:id/dashboard', function(req,res){
+var orgId = req.params.orgId;
+var userId = req.params.id;
+  Org.findById(orgId)
+    .exec(function(err,org){
+        res.render('admin/dashboard', {
+          org: org,
+        });
+       });
+     });
 
 
 

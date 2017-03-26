@@ -15,23 +15,19 @@ router.get('/login', function(req, res) {
 // Authorize & log in user
 router.post('/login', authHelpers.loginUser, function(req, res){
   console.log(req.session);
-  var orgId = (req.session.currentUser.org).toString();
-  var userId = (req.session.currentUser.id).toString();
+  var orgId = req.session.currentUser.org;
+  var userId = req.session.currentUser.id;
 
     User.findById(userId)
       .exec(function(err, user) {
         if (user.admin !== true) {
-          res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks')
+          // route to backpack index
+          res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks');
         }
         else {
-          Org.findById(orgId)
-            .exec(function(err,org){
-              res.render('admin/dashboard.hbs', {
-                org: org,
-                user: user
-              });
-          });
-      };
+          // route to admin dashboard
+          res.redirect('/org/' + orgId + '/users/' + userId + '/dashboard');
+        };
     });
 });
 
