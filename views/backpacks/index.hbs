@@ -1,4 +1,5 @@
 <h1>{{user.first_name}}'s Backpacks</h1>
+{{orgName}}
   <div>
   {{#each backpacks}}
     <div><a href="/org/{{../orgId}}/users/{{../user.id}}/backpacks/{{this.id}}">{{this.backpack_name}}</a></div>

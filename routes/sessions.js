@@ -16,8 +16,20 @@ router.post('/login', authHelpers.loginUser, function(req, res){
   console.log(req.session);
   var orgId = req.session.currentUser.org;
   var userId = req.session.currentUser.id;
-  res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks')
-});
+
+    User.findById(userId)
+      .exec(function(err, user) {
+        if (user.admin === true) {
+          res.render('admin/dashboard.hbs', {
+            user: user
+          })
+        }
+        else {
+          res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks')
+      };
+    });
+  });
+
 
 // End session
 router.delete('/', function(req, res){

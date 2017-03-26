@@ -17,13 +17,27 @@ router.get('/', function(req, res) {
   });
 })
 
-// Signup page
+// Signup page - donors
 router.get('/signup', function(req, res){
   var thisOrg = Org.findById(req.params.orgId)
     .exec(function(err,org){
       if(err) {console.log(err)};
       console.log(org);
       res.render('users/signup', {
+        orgId: req.params.orgId,
+        orgName: org.org_name
+      });
+    });
+});
+
+
+// Admin signup page - drive managers
+router.get('/signup-admin', function(req, res){
+  var thisOrg = Org.findById(req.params.orgId)
+    .exec(function(err,org){
+      if(err) {console.log(err)};
+      console.log(org);
+      res.render('users/signup-admin', {
         orgId: req.params.orgId,
         orgName: org.org_name
       });
@@ -42,26 +56,32 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
   });
 })
 
-// Create new user / complete registration
-router.post('/', authHelpers.createSecure, function(req, res){
-  var user = new User({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    organization: req.body.organization,
-    street: req.body.street,
-    city: req.body.city,
-    state: req.body.state,
-    zip_code: req.body.zip_code,
-    password: res.hashedPassword,
-    org: req.body.org
-  });
 
-  user.save(function(err, user){
-    if (err) console.log(err);
-    console.log(user);
-    res.redirect('/sessions/login');
+// Create new user / complete registration - NOT PUSHING TO ORG DB FOR SOME REASON
+router.post('/', authHelpers.createSecure, function(req, res){
+  Org.findById(req.params.orgId)
+  .exec(function(err,thisOrg){
+    var newUser = new User({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      organization: req.body.organization,
+      street: req.body.street,
+      city: req.body.city,
+      state: req.body.state,
+      zip_code: req.body.zip_code,
+      password: res.hashedPassword,
+      org: req.body.org,
+      admin: req.body.admin
+    });
+    thisOrg.users.push(newUser);
+    newUser.save(function(err, user){
+      if (err) console.log(err);
+      console.log(user);
+      res.redirect('/sessions/login');
+    });
   });
 });
+
 
 module.exports = router;

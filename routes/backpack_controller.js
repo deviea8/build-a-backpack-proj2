@@ -15,9 +15,9 @@ router.get('/', authHelpers.authorize, function(req, res){
             res.render('backpacks/index', {
                 user: user,
                 backpacks: user.backpacks,
-                userId: user.id,
+                userId: req.params.id,
                 orgId: user.org
-            });
+        });
     });
 });
 
@@ -118,7 +118,7 @@ router.delete("/:backpackId", function(req, res) {
 
 
 
-// Show individual backpack
+// Show individual backpack - NOT POPULATING LINKS CORRECTLY AFTER SECOND BACKPACK
 router.get('/:backpackId', function(req, res) {
     Backpack.findById(req.params.backpackId)
         .exec(function(err, backpack) {
