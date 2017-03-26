@@ -30,7 +30,7 @@ router.get('/new', function(req, res) {
 });
 
 
-// Create/post backpack
+// Create/post backpack - HOW DO I UPDATE ORG TOO?
 router.post('/', function createNewBackpack(req, res) {
     User.findById(req.params.id)
     .exec(function(err,user){
@@ -57,6 +57,8 @@ router.post('/', function createNewBackpack(req, res) {
     });
 });
 
+
+
 // Edit individual backpack
 router.get('/:backpackId/edit', function(req,res) {
     Backpack.findById(req.params.backpackId)
@@ -71,7 +73,7 @@ router.get('/:backpackId/edit', function(req,res) {
 });
 
 
-// Update/patch backpack
+// Update/patch backpack -  ARE USER & ORG UPDATED WITH THIS AS WELL?
 router.patch('/:backpackId', function(req, res) {
     Backpack.findByIdAndUpdate(req.params.backpackId, {
         backpack_name: req.body.backpack_name,
