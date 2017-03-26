@@ -57,6 +57,7 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
 })
 
 
+
 // Create new user / complete registration - NOT PUSHING TO ORG DB FOR SOME REASON
 router.post('/', authHelpers.createSecure, function(req, res){
   Org.findById(req.params.orgId)
@@ -74,14 +75,13 @@ router.post('/', authHelpers.createSecure, function(req, res){
       org: req.body.org,
       admin: req.body.admin
     });
+    newUser.save();
     thisOrg.users.push(newUser);
-    newUser.save(function(err, user){
-      if (err) console.log(err);
-      console.log(user);
-      res.redirect('/sessions/login');
+    thisOrg.save();
+    res.redirect('/sessions/login');
     });
   });
-});
+
 
 
 module.exports = router;
