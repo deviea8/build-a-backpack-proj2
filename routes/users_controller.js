@@ -58,7 +58,7 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
 
 
 
-// Create new user / complete registration - NOT PUSHING TO ORG DB FOR SOME REASON
+// Create new user / complete registration
 router.post('/', authHelpers.createSecure, function(req, res){
   Org.findById(req.params.orgId)
   .exec(function(err,thisOrg){
