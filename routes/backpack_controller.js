@@ -31,9 +31,9 @@ router.get('/new', function(req, res) {
 
 
 // Create/post backpack - HOW DO I UPDATE ORG TOO?
-router.post('/', function createNewBackpack(req, res) {
-    User.findById(req.params.id)
-    .exec(function(err,user){
+router.post('/', function createNewBackpack(req, res){
+    Org.findById(req.params.orgId)
+    .exec(function(err,org){
         if(err) {console.log(err)}
         var newBackpack = new Backpack({
             backpack_name: req.body.backpack_name,
@@ -50,13 +50,12 @@ router.post('/', function createNewBackpack(req, res) {
         });
         var userId = req.params.id;
         var orgId = req.params.orgId;
-        newBackpack.save();
-        user.backpacks.push(newBackpack);
-        user.save();
-        res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks/');
-    });
-});
 
+        var user = org.users.id(userId);
+        user.backpacks.push(newBackpack);
+        org.save();
+
+        res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks/');
 
 
 // Edit individual backpack

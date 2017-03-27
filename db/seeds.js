@@ -13,6 +13,9 @@ Backpack.remove({}, function(err) {
 User.remove({}, function(err) {
     console.log(err);
 });
+Org.remove({}, function(err) {
+    console.log(err);
+});
 
 // Backpack data
 
@@ -133,5 +136,10 @@ orgTwo.save(function(err) {
   if (err) console.log(err);
   console.log('Org two created!');
 });
+
+
+// Set up relationships
+
+
 
 
