@@ -1,16 +1,28 @@
-<h1>I want to:</h1>
-
-<h4>Manage a backpack drive</h4>
-<a href="/org/new"><button>Start a Backpack Drive</button></a>
-<br><br>
-
-<h4>Build and pledge a backpack.</h4>
-Select your organization:
-  <div>
-  {{#each orgs}}
-    <div><a href="/org/{{this.id}}">{{this.org_name}}</a></div>
-  {{/each}}
+<div class='signup-lander-container'>
+  <div class='i-want-to'>
+    I want to:
+  </div>
+  <div class='signup-options'>
+    <div class='manage-drive'>
+      <h4 class='section-descrip'>Manage a backpack drive for my organization.</h4>
+      <a href="/org/new"><button>Start a Drive</button></a>
     </div>
+    <div class='pledge-backpack'>
+      <h4>Build and pledge a backpack.</h4>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Organization
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+        {{#each orgs}}
+          <li><a href="/org/{{this.id}}">{{this.org_name}}</a></li>
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
