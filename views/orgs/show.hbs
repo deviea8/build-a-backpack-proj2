@@ -1,11 +1,66 @@
-<h1> {{org.org_name}} </h1>
+<div class='org-name'>
+  <div class='org-name-header'>
+  ORGANIZATION
+  </div>
+  {{org.org_name}}
+</div>
+
 <div class="org-description">{{org.description}}</div>
 <ul>
   <li>Location: {{org.location}}</li>
   <li>Organization Type: {{org.org_type}}</li>
 </ul>
-<h3>Sign up to build a backpack on behalf of {{org.org_name}}!</h3>
-<a href="/org/{{org.id}}/users/signup"><button>Get Started</button></a>
+<h3>Sign up to build a backpack on behalf of {{org.org_name}}:</h3>
+<form action="/org/{{org.id}}/users/" method="post">
+  <div class='org-id-field'>
+    <label for="org">Organization ID</label>
+    <input type="text" name="org" value="{{org.id}}" readonly="readonly">
+  </div>
+
+  <div>
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name">
+  </div>
+
+  <div>
+    <label for="last_name">Last Name</label>
+    <input type="text" name="last_name">
+  </div>
+
+  <div>
+    <label for="email">Email Address</label>
+    <input type="text" name="email">
+  </div>
+
+  <div>
+    <label for="street">Mailing Address</label>
+    <input type="text" name="street">
+  </div>
+
+  <div>
+    <label for="city">City</label>
+    <input type="text" name="city">
+  </div>
+
+
+  <div>
+    <label for="state">State</label>
+    <input type="text" name="state">
+  </div>
+
+  <div>
+    <label for="zip_code">Zip Code</label>
+    <input type="text" name="zip_code">
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="text" name="password">
+  </div>
+
+  <input type="submit" value="Submit">
+</form>
+
 
 <br>
 <br>
