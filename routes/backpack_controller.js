@@ -9,14 +9,16 @@ var mongoose = require("mongoose");
 
 // Backpack index
 router.get('/', authHelpers.authorize, function(req, res){
-    User.findById(req.params.id)
-    .exec(function(err,user){
+    var userId = req.params.id;
+    console.log('--------------');
+    console.log('--------------');
+    Org.findById(req.params.orgId)
+    .exec(function(err,org){
         if(err) {console.log(err)}
             res.render('backpacks/index', {
-                user: user,
-                backpacks: user.backpacks,
-                userId: req.params.id,
-                orgId: user.org
+                user: org.users.id(req.params.id),
+                backpacks: org.users.id(req.params.id).backpacks,
+                orgId: org.id
         });
     });
 });
@@ -50,12 +52,12 @@ router.post('/', function createNewBackpack(req, res){
         });
         var userId = req.params.id;
         var orgId = req.params.orgId;
-
         var user = org.users.id(userId);
         user.backpacks.push(newBackpack);
         org.save();
-
         res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks/');
+    });
+});
 
 
 // Edit individual backpack
