@@ -100,3 +100,28 @@ a {
 .org-id-field {
   visibility: hidden;
 }
+
+.submit-btn {
+  background: #A6D785;
+  border-style: solid;
+  border: 2px solid white;
+  padding: 5px;
+  border: 1px solid gray;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #BCED91;
+}
+
+.create-acct-header {
+  font-size: 17px;
+}
+
+form {
+  font-size: 15px;
+}
+
+input {
+  margin: 6px;
+}
