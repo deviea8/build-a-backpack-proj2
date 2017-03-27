@@ -1,18 +1,18 @@
 <div class='signup-lander-container'>
   <div class='i-want-to'>
-    I want to:
+    <strong>I want to:</strong>
   </div>
   <div class='signup-options'>
-    <div class='manage-drive'>
+    <div class='manage-drive signup-option'>
       <h4 class='section-descrip'>Manage a backpack drive for my organization.</h4>
-      <a href="/org/new"><button>Start a Drive</button></a>
+      <a href="/org/new"><button class='btn start-drive-btn'>Start a Drive</button></a>
     </div>
-    <div class='pledge-backpack'>
+    <div class='pledge-backpack signup-option'>
       <h4>Build and pledge a backpack.</h4>
       <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Organization
+        <button class="btn btn-primary dropdown-toggle select-org-button" type="button" data-toggle="dropdown">Select Your Organization
         <span class="caret"></span></button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu scrollable-menu">
         {{#each orgs}}
           <li><a href="/org/{{this.id}}">{{this.org_name}}</a></li>
         {{/each}}
