@@ -166,3 +166,161 @@ ul {
 .create-header {
   font-size: 20px;
 }
+
+
+/* Backpack create page */
+
+.backpack {
+  text-align: center;
+  padding: 0 10px 0 10px;
+
+}
+
+.order-summary {
+  background: #ffedcc;
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+
+.backpack #backpack-image {
+  height: 300px;
+  width: 250px;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/6f/0d/a4/6f0da48be5de51944ddc044cbff469cc.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.indiv-item {
+  height: 90px;
+  width: 150px;
+  background: pink;
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 15px;
+  border: 2px solid gray;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+table {
+   margin: auto;
+   font-size: 12px;
+   text-transform:capitalize;
+}
+
+td {
+  padding: 0 5px 0 5px;
+}
+
+
+.intro {
+  margin: 10px 150px 20px 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.items-1 h4 {
+  margin-bottom: 20px;
+}
+
+.items-1 {
+  padding-left: 35px;
+}
+
+#pencils {
+  background: url(https://s-media-cache-ak0.pinimg.com/originals/1c/db/20/1cdb20f9359f3116059fd46575f27580.jpg);
+  background-size: contain;
+}
+
+#eraser {
+  background: url(http://ghk.h-cdn.co/assets/15/48/980x490/gallery-1448402020-pink-eraser-index.jpg);
+  background-size: cover;
+}
+
+#folders {
+  background: url(https://s-media-cache-ak0.pinimg.com/736x/ea/2f/5e/ea2f5eb379513efa74b90eac81696e29.jpg);
+  background-size: cover;
+}
+
+#colored-pencils {
+  background: url(http://images4.fanpop.com/image/photos/22100000/Colored-pencils-pencils-22186520-2560-1702.jpg);
+  background-size: cover;
+}
+
+#notebooks {
+  background: url(https://cdn.pixabay.com/photo/2015/10/16/21/32/notebooks-991860_960_720.jpg);
+  background-size: contain;
+}
+
+#markers {
+  background: url(http://2.bp.blogspot.com/-Eavddsvqvd8/VYXmb4asPHI/AAAAAAAAu8U/EnDFJrxUCyQ/s1600/markers.jpg);
+  background-size: cover;
+}
+
+#scissors {
+  background: url(https://ae01.alicdn.com/kf/HTB1ORwULVXXXXXkXXXXq6xXFXXXC/6pcs-per-font-b-set-b-font-DIY-Craft-font-b-Scissors-b-font-Wave-Edge.jpg);
+  background-size: cover;
+}
+
+#glue-sticks {
+  background: url(https://cdn.instructables.com/FRP/PA1E/IOEK9PX5/FRPPA1EIOEK9PX5.LARGE.jpg);
+  background-size: cover;
+}
+
+#gel-pens {
+  background: url(https://cdn.shopify.com/s/files/1/1183/7000/products/P2229-2.jpeg?v=1457389002);
+  background-size: cover;
+}
+
+#binder {
+  background: url(https://www.autostraddle.com/wp-content/uploads/2015/08/binders.jpg);
+  background-size: cover;
+}
+
+.input-sm {
+  width: 60%;
+  text-align:center;
+  margin: auto;
+}
+
+.btn-xs {
+  margin: auto;
+  background: #A1F5A3;
+  color: black;
+}
+
+.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+
+.intro-text {
+  background: #F0F0F0;
+  margin: 10px;
+  padding: 10px;
+}
+
+.indiv-item .input-sm {
+  color: black;
+}
+
+.item-name {
+  background: #FFC099;
+  padding: 0 3px 0 3px;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+
+.row {
+  margin-left: 8px;
+}

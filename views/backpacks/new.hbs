@@ -1,4 +1,217 @@
-<h1>Create a New Backpack</h1>
+<div class='signup-lander-container'>
+    <div class='org-intro'>
+        <div class='org-name'>Build Your Backpack</div>
+    </div>
+      <div class="row">
+        <div class="items-1 col-md-4">
+            <h4>1. Select supplies and quantity</h4>
+          <div class="row">
+          <form action="/org/{{orgId}}/users/{{userId}}/backpacks" method="POST">
+            <div class="col-md-6">
+              <div id = "pencils" class = "indiv-item form-group"><span class = "item-name"><label for='pencils'>Pencils</label></span>
+                <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "pencils">-</button>
+                  </span>
+                  <input type = "number" name = "pencils" class = "input-sm pencil-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus pencils" value = "pencils">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "folders" class = "indiv-item form-group"><span class = "item-name"><label for='folders'>Folders</label></span>
+               <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "folders">-</button>
+                  </span>
+                  <input type = "number" name = "folders" class = "input-sm folder-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus folders" value = "folders">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "notebooks" class = "indiv-item form-group"><span class = "item-name"><label for='notebooks'>Notebooks</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "notebooks">-</button>
+                  </span>
+                  <input type = "number" name = "notebooks" class = "input-sm notebook-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus notebooks" value = "notebooks">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "scissors" class = "indiv-item form-group"><span class = "item-name"><label for='scissors'>Scissors</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "scissors">-</button>
+                  </span>
+                  <input type = "number" name = "scissors" class = "input-sm scissors-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus scissors" value = "scissors">+</button>
+                  </span>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+              <div id = "eraser" class = "indiv-item form-group"><span class = "item-name"><label for='erasers'>Erasers</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "erasers">-</button>
+                  </span>
+                  <input type = "number" name = "erasers" class = "input-sm erasers-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus erasers" value = "erasers">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "colored-pencils" class = "indiv-item form-group"><span class = "item-name"><label for='colored_pencils'>Colored Pencils</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus" value = "colored-pencils">-</button>
+                  </span>
+                  <input type = "number" name = "colored_pencils" class = "input-sm colored-pencils-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus colored-pencils" value = "colored-pencils">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "markers" class = "indiv-item form-group"><span class = "item-name"><label for='markers'>Markers</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus markers" value = "markers">-</button>
+                  </span>
+                  <input type = "number" name = "markers" class = "input-sm markers-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus markers" value = "markers">+</button>
+                  </span>
+                </div>
+              </div>
+              <div id = "glue-sticks" class = "indiv-item form-group"><span class = "item-name"><label for='glue_sticks'>Glue Sticks</label></span>
+                 <div class="input-group">
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-minus glue-sticks" value = "glue-sticks">-</button>
+                  </span>
+                  <input type = "number" name = "glue_sticks" class = "input-sm glue-sticks-value" value = "0" min = "0" max = "10" readonly>
+                  <span class = "input-group-btn">
+                    <button type = "button" class = "btn btn-xs btn-number button-plus glue-sticks" value = "glue-sticks">+</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+      <div class = "backpack col-md-4">
+        <h4>2. Select backpack color</h4>
+
+
+
+<div class='backpack-color-dropdown form-group'>
+<select style="position:absolute;top:0px;left:0px;width:220px; height:35px;line-height:8px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+    <option value="blue">Blue</option>
+   <option value="green">Green</option>
+   <option value="purple">Purple</option>
+   <option value="red">Red</option>
+</select>
+<input name="backpack_color" placeholder="Blue" id="displayValue" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" onfocus="this.select()" type="text">
+<!-- <input name="idValue" id="idValue" type="hidden"> -->
+</div>
+
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                <div class='form-group'>
+                    <span id="tag"><input type='text' name='backpack_color'>Blue</span>
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a class="blue-backpack">Blue</a></li>
+              <li><a class="green-backpack">Green</a></li>
+              <li><a class="purple-backpack">Purple</a></li>
+              <li><a class="red-backpack">Red</a></li>
+            </ul>
+          </div>
+
+        <div id = "backpack-image">
+        </div>
+      </div>
+    <div class = "order-summary col-md-3">
+      <h4>Order Summary</h4>
+      <table>
+      <tbody>
+        <tr>
+          <td><strong>ITEM</strong></td>
+          <td><strong>QUANTITY</strong></td>
+          <td><strong>COST</strong></td>
+        </tr>
+        <tr>
+          <td id = "backpack-type">Blue Backpack</td>
+          <td><strong>1</strong></td>
+          <td class = 'cost'>6</td>
+        </tr>
+        <tr>
+          <td>Pencils</td>
+          <td id = 'pencils-qty'>0</td>
+          <td id = 'pencils-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Folders</td>
+          <td id = 'folders-qty'>0</td>
+          <td id = 'folders-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Notebooks</td>
+          <td id = 'notebooks-qty'>0</td>
+          <td id = 'notebooks-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Scissors</td>
+          <td id = 'scissors-qty'>0</td>
+          <td id = 'scissors-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Erasers</td>
+          <td id = 'erasers-qty'>0</td>
+          <td id = 'erasers-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Colored Pencils</td>
+          <td id = 'colored-pencils-qty'>0</td>
+          <td id = 'colored-pencils-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Markers</td>
+          <td id = 'markers-qty'>0</td>
+          <td id = 'markers-cost' class = 'cost'>0</td>
+        </tr>
+        <tr>
+          <td>Glue Sticks</td>
+          <td id = 'glue-sticks-qty'>0</td>
+          <td id = 'glue-sticks-cost' class = 'cost'>0</td>
+        </tr>
+      </tbody>
+      </table>
+      <h5>TOTAL COST</h5>
+      <p class = "total-cost">$6</p>
+        <div class="form-group">
+            <label for="first_name">Name Your Backpack:</label>
+            <input type="text" name="backpack_name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="recipient_note">Message to recipient:</label>
+            <input type="text" name="recipient_note" class="form-control">
+        </div>
+      <button class = "btn btn-primary">Finalize</button>
+    </div>
+  </div>
+
+</div>
+
+
+OLD STUFF
+
+
+
 <div class="row">
     <form action="/org/{{orgId}}/users/{{userId}}/backpacks" method="POST" class="col-md-6 col-md-offset-3">
         <div class="form-group">
@@ -52,3 +265,6 @@
 </div>
 
 <a href="/org/{{orgId}}/users/{{userId}}/backpacks" class="btn btn-default">Back to List</a>
+
+
+
