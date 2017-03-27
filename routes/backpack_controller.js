@@ -109,6 +109,16 @@ router.patch('/:backpackId', function(req,res){
             var thisBackpack = org.users.id(userId).backpacks.id(req.params.backpackId);
             console.log(thisBackpack);
             thisBackpack.backpack_name = req.body.backpack_name;
+            thisBackpack.pencils = req.body.pencils;
+            thisBackpack.folders = req.body.folders;
+            thisBackpack.notebooks = req.body.notebooks;
+            thisBackpack.scissors = req.body.scissors;
+            thisBackpack.erasers = req.body.erasers;
+            thisBackpack.colored_pencils = req.body.colored_pencils;
+            thisBackpack.markers = req.body.markers;
+            thisBackpack.glue_sticks = req.body.glue_sticks;
+            thisBackpack.backpack_color = req.body.backpack_color;
+            thisBackpack.recipient_note = req.body.recipient_note;
             thisBackpack.save();
             org.save();
             user.save();
