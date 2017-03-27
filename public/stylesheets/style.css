@@ -327,3 +327,20 @@ td {
 .hidden-backpack-color-field {
   visibility: hidden;
 }
+
+.back-to-list {
+  float: left;
+}
+
+.back-to-list-button {
+  height: 25px;
+  font-size: 8px;
+}
+
+.total-cost-section {
+  background: #e0fde0;
+  padding: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
