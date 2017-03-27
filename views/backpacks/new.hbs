@@ -103,26 +103,8 @@
        </div>
       <div class = "backpack col-md-4">
         <h4>2. Select backpack color</h4>
-
-
-
-<div class='backpack-color-dropdown form-group'>
-<select style="position:absolute;top:0px;left:0px;width:220px; height:35px;line-height:8px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
-   <option></option>
-    <option value="blue">Blue</option>
-   <option value="green">Green</option>
-   <option value="purple">Purple</option>
-   <option value="red">Red</option>
-</select>
-<input name="backpack_color" placeholder="Blue" id="displayValue" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;" onfocus="this.select()" type="text">
-<!-- <input name="idValue" id="idValue" type="hidden"> -->
-</div>
-
-
           <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                <div class='form-group'>
-                    <span id="tag"><input type='text' name='backpack_color'>Blue</span>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="tag">Blue</span>
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a class="blue-backpack">Blue</a></li>
@@ -201,6 +183,15 @@
             <label for="recipient_note">Message to recipient:</label>
             <input type="text" name="recipient_note" class="form-control">
         </div>
+
+
+        <div>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+
+
+
       <button class = "btn btn-primary">Finalize</button>
     </div>
   </div>
