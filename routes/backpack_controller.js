@@ -10,8 +10,6 @@ var mongoose = require("mongoose");
 // Backpack index
 router.get('/', authHelpers.authorize, function(req, res){
     var userId = req.params.id;
-    console.log('--------------');
-    console.log('--------------');
     Org.findById(req.params.orgId)
     .exec(function(err,org){
         if(err) {console.log(err)}
@@ -23,6 +21,7 @@ router.get('/', authHelpers.authorize, function(req, res){
     });
 });
 
+
 // New backpack (form page)
 router.get('/new', function(req, res) {
     res.render('backpacks/new', {
@@ -32,7 +31,7 @@ router.get('/new', function(req, res) {
 });
 
 
-// Create/post backpack - HOW DO I UPDATE ORG TOO?
+// Create/post backpack
 router.post('/', function createNewBackpack(req, res){
     Org.findById(req.params.orgId)
     .exec(function(err,org){
@@ -123,11 +122,11 @@ router.delete("/:backpackId", function(req, res) {
 
 // Show individual backpack - NOT POPULATING LINKS CORRECTLY AFTER SECOND BACKPACK
 router.get('/:backpackId', function(req, res) {
-    Backpack.findById(req.params.backpackId)
-        .exec(function(err, backpack) {
+    Org.findById(req.params.orgId)
+        .exec(function(err, org) {
             if(err) console.log(err);
             res.render('backpacks/show', {
-                backpack: backpack,
+                backpack: org.users.id(req.params.id).backpacks.id(req.params.backpackId),
                 userId: req.params.id,
                 orgId: req.params.orgId
             });
