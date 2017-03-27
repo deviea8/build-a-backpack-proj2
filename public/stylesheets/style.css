@@ -359,6 +359,7 @@ td {
 .list-of-donors {
   width: 40%;
   border: 5px solid #ffedcc;
+  font-size: 15px;
 }
 
 .email-address{

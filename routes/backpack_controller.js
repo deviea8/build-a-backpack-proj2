@@ -73,31 +73,44 @@ router.get('/:backpackId/edit', function(req,res) {
 });
 
 // HOW DO I DO THIS USING ORG???
-// Update/patch backpack
-router.patch('/:backpackId', function(req, res) {
-    var org = req.params.orgId;
-    var user = req.params.id;
-    Org.findByIdAndUpdate(req.params.orgId, {
-        backpack_name: req.body.backpack_name,
-        pencils: req.body.pencils,
-        folders: req.body.folders,
-        notebooks: req.body.notebooks,
-        scissors: req.body.scissors,
-        erasers: req.body.erasers,
-        colored_pencils: req.body.colored_pencils,
-        markers: req.body.markers,
-        glue_sticks: req.body.glue_sticks,
-        backpack_color: req.body.backpack_color,
-        recipient_note: req.body.recipient_note
-    }, {new: true})
-        .exec(function(err, backpack) {
-            if (err) { console.log(err); }
-            console.log(backpack);
-            res.render('backpacks/show', {
-              backpack: backpack,
-              userId: req.params.id
-            });
-        });
+// // Update/patch backpack
+// router.patch('/:backpackId', function(req, res) {
+//     var org = req.params.orgId;
+//     var user = req.params.id;
+//     Org.findByIdAndUpdate(req.params.orgId, {
+//         backpack_name: req.body.backpack_name,
+//         pencils: req.body.pencils,
+//         folders: req.body.folders,
+//         notebooks: req.body.notebooks,
+//         scissors: req.body.scissors,
+//         erasers: req.body.erasers,
+//         colored_pencils: req.body.colored_pencils,
+//         markers: req.body.markers,
+//         glue_sticks: req.body.glue_sticks,
+//         backpack_color: req.body.backpack_color,
+//         recipient_note: req.body.recipient_note
+//     }, {new: true})
+//         .exec(function(err, backpack) {
+//             if (err) { console.log(err); }
+//             console.log(backpack);
+//             res.render('backpacks/show', {
+//               backpack: backpack,
+//               userId: req.params.id
+//             });
+//         });
+// });
+
+
+router.patch('/:backpackId', function(req,res){
+    Org.findById(req.params.orgId)
+        .exec(function(err,org){
+            if(err) {console.log(err)}
+            console.log(org)
+            var orgUser = req.params.id;
+            var thisBackpack = org.users.id(orgUser).backpacks.id(req.params.backpackId);
+            console.log(thisBackpack);
+            thisBackpack.update({ _id: req.params.backpackId }, { $set: {backpack_name: req.body.backpack_name}})
+    });
 });
 
 
