@@ -109,7 +109,7 @@ router.patch('/:backpackId', function(req,res){
             var orgUser = req.params.id;
             var thisBackpack = org.users.id(orgUser).backpacks.id(req.params.backpackId);
             console.log(thisBackpack);
-            thisBackpack.update({ _id: req.params.backpackId }, { $set: {backpack_name: req.body.backpack_name}})
+            thisBackpack.update({ _id: req.params.backpackId }, { $addToSet: {backpack_name: req.body.backpack_name, pencils: req.body.pencils, folders: req.body.folders, notebooks: req.body.notebooks, scissors: req.body.scissors, erasers: req.body.erasers, colored_pencils: req.body.colored_pencils, markers: req.body.markers, glue_sticks: req.body.glue_sticks, backpack_color: req.body.backpack_color, recipient_note: req.body.recipient_note}})
     });
 });
 
