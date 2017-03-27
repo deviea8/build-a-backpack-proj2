@@ -15,24 +15,28 @@ var greenBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=37069638)');
   $('#tag').text('Green');
   $('#backpack-type').text('Green Backpack');
+  $('.backpack-color-input').attr('value','Green');
 }
 
 var blueBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(https://s-media-cache-ak0.pinimg.com/736x/6f/0d/a4/6f0da48be5de51944ddc044cbff469cc.jpg)');
   $('#tag').text('Blue');
   $('#backpack-type').text('Blue Backpack');
+  $('.backpack-color-input').attr('value','Blue');
 }
 
 var purpleBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=68056220)');
   $('#tag').text('Purple');
   $('#backpack-type').text('Purple Backpack');
+  $('.backpack-color-input').attr('value','Purple');
 }
 
 var redBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=72028988)');
   $('#tag').text('Red');
   $('#backpack-type').text('Red Backpack');
+  $('.backpack-color-input').attr('value','Red');
 }
 
 

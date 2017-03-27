@@ -62,8 +62,10 @@ a {
 
 .i-want-to {
   background: #ffedcc;
-  font-size: 15px;
   padding: 10px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bolder;
 }
 
 .dropdown-container {
@@ -324,8 +326,10 @@ td {
   margin-left: 8px;
 }
 
-.hidden-backpack-color-field {
-  visibility: hidden;
+.backpack-color-hidden-field {
+  width: 100px;
+  margin: 0 auto;
+/*  visibility: hidden;*/
 }
 
 .back-to-list {
