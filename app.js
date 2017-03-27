@@ -10,6 +10,13 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 var db = require('./db');
 mongoose.connect('mongodb://localhost/build-a-backpack');
+var array = require('lodash/array');
+var object = require('lodash/fp/object');
+var merge = require('lodash.merge');
+var _ = require('lodash');
+var _ = require('lodash/core');
+var fp = require('lodash/fp');
+
 
 //routes
 var indexController = require('./routes/index_controller');
