@@ -2,10 +2,6 @@
 Organization: {{orgName}}
 
 <form action="/org/{{orgId}}/users/" method="post">
-  <div class='org-id-field'>
-    <label for="admin">Admin</label>
-    <input type="radio" name="admin" value="Admin" checked readonly="readonly">
-  </div>
 
   <div class='org-id-field'>
     <label for="org">Organization ID</label>
@@ -51,6 +47,11 @@ Organization: {{orgName}}
   <div>
     <label for="password">Password</label>
     <input type="password" name="password" required>
+  </div>
+
+  <div class='org-id-field'>
+    <label for="admin">Admin</label>
+    <input type="radio" name="admin" value="Admin" checked readonly="readonly">
   </div>
 
   <input type="submit" value="Submit">
