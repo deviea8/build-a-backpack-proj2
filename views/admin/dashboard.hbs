@@ -1,24 +1,56 @@
 <h1>{{org.org_name}}'s Backpack Drive Dashboard</h1>
-
 <h4>{{org.org_name}} Pledgers</h4>
   <div>
   {{#each org.users}}
   <div class="dashboard-donor-info">
   <a href="/org/{{../org.id}}/users/{{this.id}}/backpacks">{{this.first_name}} {{this.last_name}}</a>
   </div>
-
   {{/each}}
   </div>
 
-{{org.users}}
+<h4>Backpack Summary</h4>
 
-<h4>Backpacks</h4>
-  <div>
+<table class='table'>
+  <thead>
+  <tr>
+    <th>BACKPACK NAME</th>
+    <th>COLOR</th>
+    <th>PENCILS</th>
+    <th>FOLDERS</th>
+    <th>NOTEBOOKS</th>
+    <th>SCISSORS</th>
+    <th>ERASERS</th>
+    <th>COLORED PENCILS</th>
+    <th>MARKERS</th>
+    <th>GLUE STICKS</th>
+    <th>MESSAGE TO RECIPIENT</th>
+  </tr>
+  </thead>
+  <tbody>
   {{#each org.users}}
-  <div class="dashboard-backpack-info">
-  <li>{{this.backpacks}}
-  </div>
+  {{#each backpacks}}
+    <td>{{this.backpack_name}}</td>
+    <td>{{this.backpack_color}}</td>
+    <td>{{this.pencils}}</td>
+    <td>{{this.folders}}</td>
+    <td>{{this.notebooks}}</td>
+    <td>{{this.scissors}}</td>
+    <td>{{this.erasers}}</td>
+    <td>{{this.colored_pencils}}</td>
+    <td>{{this.markers}}</td>
+    <td>{{this.glue_sticks}}</td>
+    <td>{{this.recipient_note}}</td>
+  </tr>
+    {{/each}}
+  {{/each}}
+  </tbody>
+</table>
 
+    <div>
+  {{#each org.backpacks}}
+  <div class="dashboard-backpack-info">
+  <li>{{this}}</li>
+  </div>
   {{/each}}
   </div>
 

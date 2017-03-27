@@ -61,21 +61,23 @@ router.post('/', function createNewBackpack(req, res){
 
 // Edit individual backpack
 router.get('/:backpackId/edit', function(req,res) {
-    Backpack.findById(req.params.backpackId)
-    .exec(function(err, backpack) {
+    Org.findById(req.params.orgId)
+    .exec(function(err, org) {
         if (err) { console.log(err); }
         res.render('backpacks/edit', {
-            backpack: backpack,
+            backpack: org.users.id(req.params.id).backpacks.id(req.params.backpackId),
             userId: req.params.id,
             orgId: req.params.orgId
         });
     });
 });
 
-
-// Update/patch backpack -  ARE USER & ORG UPDATED WITH THIS AS WELL?
+// HOW DO I DO THIS USING ORG???
+// Update/patch backpack
 router.patch('/:backpackId', function(req, res) {
-    Backpack.findByIdAndUpdate(req.params.backpackId, {
+    var org = req.params.orgId;
+    var user = req.params.id;
+    Org.findByIdAndUpdate(req.params.orgId, {
         backpack_name: req.body.backpack_name,
         pencils: req.body.pencils,
         folders: req.body.folders,
@@ -99,11 +101,12 @@ router.patch('/:backpackId', function(req, res) {
 });
 
 
+// HOW DO I DELETE BACKPACK FROM ORG???
 // Delete backpack - Having some issues with this - after editing a backpack the edit and delete buttons don't work anymore
 router.delete("/:backpackId", function(req, res) {
     console.log(req.params.id)
     console.log(req.params.orgId)
-    User.findByIdAndUpdate(req.params.id, {
+    Org.findByIdAndUpdate(req.params.orgId, {
         $pull: {
             backpacks: {_id: req.params.backpackId}
         }
@@ -120,7 +123,7 @@ router.delete("/:backpackId", function(req, res) {
 
 
 
-// Show individual backpack - NOT POPULATING LINKS CORRECTLY AFTER SECOND BACKPACK
+// Show individual backpack
 router.get('/:backpackId', function(req, res) {
     Org.findById(req.params.orgId)
         .exec(function(err, org) {

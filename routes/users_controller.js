@@ -66,6 +66,7 @@ var userId = req.params.id;
     .exec(function(err,org){
         res.render('admin/dashboard', {
           org: org,
+          backpacks: org.users.id.backpacks
         });
        });
      });
