@@ -13,7 +13,7 @@
 <table class='table'>
   <thead>
   <tr>
-    <th>BACKPACK NAME</th>
+    <th class='backpack-name'>BACKPACK NAME</th>
     <th>COLOR</th>
     <th>PENCILS</th>
     <th>FOLDERS</th>
@@ -29,7 +29,7 @@
   <tbody>
   {{#each org.users}}
   {{#each backpacks}}
-    <td>{{this.backpack_name}}</td>
+    <td class='backpack-name'>{{this.backpack_name}}</td>
     <td>{{this.backpack_color}}</td>
     <td>{{this.pencils}}</td>
     <td>{{this.folders}}</td>

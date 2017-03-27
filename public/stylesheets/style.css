@@ -351,4 +351,8 @@ td {
 
 
 /* Admin dashboard */
+.table td, th {
+  width: 3%;
+  text-align: center;
+}
 
