@@ -38,6 +38,7 @@ a {
   flex-direction: column;
   text-align: center;
   border: 4px solid #ffedcc;
+  padding-bottom: 10px;
 }
 
 .signup-options {
@@ -99,6 +100,7 @@ a {
 
 .org-id-field {
   visibility: hidden;
+  font-size: 2px;
 }
 
 .org-name-header {
@@ -128,6 +130,7 @@ a {
 
 form {
   font-size: 15px;
+  margin-top: 10px;
 }
 
 input {
@@ -138,7 +141,7 @@ input {
   background: #f6f6f6;
   width: 100%;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .org-name {
@@ -154,7 +157,12 @@ ul {
   width: 40%;
   padding: 3px;
   margin: 0 auto;
-  margin-top: 4px;
+  margin-top: 3px;
   margin-bottom: 4px;
 }
 
+/* Create new drive signup */
+
+.create-header {
+  font-size: 20px;
+}
