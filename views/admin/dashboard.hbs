@@ -1,12 +1,24 @@
 <h1>{{org.org_name}}'s Backpack Drive Dashboard</h1>
 <h4>{{org.org_name}} Pledgers</h4>
-  <div>
+
+<table class='table list-of-donors'>
+  <thead>
+  <tr>
+    <th>NAME</th>
+    <th>EMAIL ADDRESS</th>
+    <th># BACKPACKS CREATED</th>
+  </tr>
+  </thead>
+  <tbody>
   {{#each org.users}}
-  <div class="dashboard-donor-info">
-  <a href="/org/{{../org.id}}/users/{{this.id}}/backpacks">{{this.first_name}} {{this.last_name}}</a>
-  </div>
+    <td><a href="/org/{{../org.id}}/users/{{this.id}}/backpacks">{{this.first_name}} {{this.last_name}}</a></td>
+    <td class='email-address'>{{this.email}}</td>
+    <td>{{this.backpacks.length}}</td>
+  </tr>
   {{/each}}
-  </div>
+  </tbody>
+</table>
+
 
 <h4>Backpack Summary</h4>
 

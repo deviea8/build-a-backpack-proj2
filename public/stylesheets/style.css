@@ -356,3 +356,12 @@ td {
   text-align: center;
 }
 
+.list-of-donors {
+  width: 40%;
+  border: 5px solid #ffedcc;
+}
+
+.email-address{
+  text-transform: lowercase;
+}
+
