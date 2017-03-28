@@ -236,54 +236,45 @@ td {
 }
 
 #pencils {
-  background: url(https://s-media-cache-ak0.pinimg.com/originals/1c/db/20/1cdb20f9359f3116059fd46575f27580.jpg);
+  background: url('/images/pencils.jpg');
   background-size: contain;
 }
 
 #eraser {
-  background: url(http://ghk.h-cdn.co/assets/15/48/980x490/gallery-1448402020-pink-eraser-index.jpg);
+  background: url('/images/erasers.jpg');
   background-size: cover;
 }
 
 #folders {
-  background: url(https://s-media-cache-ak0.pinimg.com/736x/ea/2f/5e/ea2f5eb379513efa74b90eac81696e29.jpg);
+  background: url('/images/folders.jpg');
   background-size: cover;
 }
 
 #colored-pencils {
-  background: url(http://images4.fanpop.com/image/photos/22100000/Colored-pencils-pencils-22186520-2560-1702.jpg);
+  background: url('/images/colored_pencils.jpg');
   background-size: cover;
 }
 
 #notebooks {
-  background: url(https://cdn.pixabay.com/photo/2015/10/16/21/32/notebooks-991860_960_720.jpg);
-  background-size: contain;
+  background: url('/images/notebooks.jpeg');
+  background-size: cover;
 }
 
 #markers {
-  background: url(http://2.bp.blogspot.com/-Eavddsvqvd8/VYXmb4asPHI/AAAAAAAAu8U/EnDFJrxUCyQ/s1600/markers.jpg);
+  background: url('/images/markers.jpg');
   background-size: cover;
 }
 
 #scissors {
-  background: url(https://ae01.alicdn.com/kf/HTB1ORwULVXXXXXkXXXXq6xXFXXXC/6pcs-per-font-b-set-b-font-DIY-Craft-font-b-Scissors-b-font-Wave-Edge.jpg);
+  background: url('/images/scissors.jpeg');
   background-size: cover;
 }
 
 #glue-sticks {
-  background: url(https://cdn.instructables.com/FRP/PA1E/IOEK9PX5/FRPPA1EIOEK9PX5.LARGE.jpg);
+  background: url('/images/glue_sticks.jpg');
   background-size: cover;
 }
 
-#gel-pens {
-  background: url(https://cdn.shopify.com/s/files/1/1183/7000/products/P2229-2.jpeg?v=1457389002);
-  background-size: cover;
-}
-
-#binder {
-  background: url(https://www.autostraddle.com/wp-content/uploads/2015/08/binders.jpg);
-  background-size: cover;
-}
 
 .input-sm {
   width: 60%;
