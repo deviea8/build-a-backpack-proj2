@@ -220,10 +220,10 @@ var checkBackpackColor = function() {
 
 
 // Backpack images
-var blueBackpackImage = $('<div><img src="/images/blue-sm.png"></div>');
-var greenBackpackImage = $('<div><img src="/images/green-sm.png"></div>');
-var redBackpackImage = $('<div><img src="/images/red-sm.png"></div>');
-var purpleBackpackImage = $('<div><img src="/images/purple-sm.png"></div>');
+var blueBackpackImage = $("<div class='bp-image'><img src='/images/blue-sm.png'></div>");
+var greenBackpackImage = $("<div class='bp-image'><img src='/images/green-sm.png'></div>");
+var redBackpackImage = $("<div class='bp-image'><img src='/images/red-sm.png'></div>");
+var purpleBackpackImage = $("<div class='bp-image'><img src='/images/purple-sm.png'></div>");
 
 
 var checkColor = function(backpackColor) {

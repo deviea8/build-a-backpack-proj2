@@ -4,10 +4,10 @@
   <a href="/org/{{orgId}}/users/{{user.id}}/backpacks/new" class="build-new-backpack-btn btn btn-default submit-btn">Build a New Backpack</a>
     <div class='card-container'>
     {{#each backpacks}}
-      <div class='backpack-card'>
-        <div><a href="/org/{{../orgId}}/users/{{../user.id}}/backpacks/{{this.id}}">{{this.backpack_name}}</a></div>
-        <div class='backpack-color'>Backpack Color: {{this.backpack_color}}</div>
-      </div>
+      <div class='backpack-card'><a href="/org/{{../orgId}}/users/{{../user.id}}/backpacks/{{this.id}}">
+        <div class='index-backpack-name'>{{this.backpack_name}}</div>
+        <div class='backpack-color index-backpack-color'>Backpack Color: {{this.backpack_color}}</div>
+      </div></a>
     {{/each}}
     </div>
 

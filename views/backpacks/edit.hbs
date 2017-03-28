@@ -1,68 +1,65 @@
 <div class='signup-lander-container'>
-<h1>Edit {{backpack.backpack_name}}</h1>
 
-<div class="row">
-    <form action="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}?_method=PATCH" method="POST" class="col-md-6 col-md-offset-3">
-        <div class="form-group">
-            <label for="first_name">Backpack Name:</label>
-            <input type="text" name="backpack_name" value="{{backpack.backpack_name}}" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="pencils">Pencils:</label>
-            <input type="number" name="pencils" value="{{backpack.pencils}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="folders">Folders:</label>
-            <input type="number" name="folders" value="{{backpack.folders}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="notebooks">Notebooks:</label>
-            <input type="number" name="notebooks" value="{{backpack.notebooks}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="scissors">Scissors:</label>
-            <input type="number" name="scissors" value="{{backpack.scissors}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="erasers">Erasers:</label>
-            <input type="number" name="erasers" value="{{backpack.erasers}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="colored_pencils">Colored Pencils:</label>
-            <input type="number" name="colored_pencils" value="{{backpack.colored_pencils}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="markers">Markers:</label>
-            <input type="number" name="markers" value="{{backpack.markers}}" class="form-control">
-        </div>
-         <div class="form-group">
-            <label for="glue_sticks">Glue Sticks:</label>
-            <input type="number" name="glue_sticks" value="{{backpack.glue_sticks}}" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="backpack_color">Backpack Color:</label>
-            <input type="text" name="backpack_color" value="{{backpack.backpack_color}}" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="recipient_note">Recipient Note:</label>
-            <input type="text" name="recipient_note" value="{{backpack.recipient_note}}" class="form-control">
-        </div>
+    <div class='org-intro'>
+        <div class='back-to-list'><a href="/org/{{orgId}}/users/{{userId}}/backpacks" class="btn btn-default back-to-list-button">BACK TO LIST</a></div>
+        <div class='org-name'>Edit {{backpack.backpack_name}}</div>
+    </div>
 
-        <div>
-            <input type="submit" value="Submit" class="btn btn-primary">
-        </div>
-    </form>
-</div>
+    <div class="row edit-form">
+        <form action="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}?_method=PATCH" method="POST" class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="first_name">Backpack Name:</label>
+                <input type="text" name="backpack_name" value="{{backpack.backpack_name}}" class="form-control">
+            </div>
+            <span class='org-name-header'>EDIT CONTENTS</span>
+            <div class="form-group backpack-contents">
+                <table>
+                    <tr>
+                        <th><label for="pencils">Pencils:</label></th>
+                        <th><label for="folders">Folders:</label></th>
+                        <th><label for="notebooks">Notebooks:</label></th>
+                        <th><label for="scissors">Scissors:</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="pencils" value="{{backpack.pencils}}" class="form-control"></td>
+                        <td><input type="number" name="folders" value="{{backpack.folders}}" class="form-control"></td>
+                        <td><input type="number" name="notebooks" value="{{backpack.notebooks}}" class="form-control"></td>
+                        <td><input type="number" name="scissors" value="{{backpack.scissors}}" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="erasers">Erasers:</label></th>
+                        <th><label for="markers">Markers:</label></th>
+                        <th><label for="colored_pencils">Colored Pencils:</label></th>
+                        <th><label for="glue_sticks">Glue Sticks:</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="erasers" value="{{backpack.erasers}}" class="form-control"></td>
+                        <td><input type="number" name="markers" value="{{backpack.markers}}" class="form-control"></td>
+                        <td><input type="number" name="colored_pencils" value="{{backpack.colored_pencils}}" class="form-control"></td>
+                        <td><input type="number" name="glue_sticks" value="{{backpack.glue_sticks}}" class="form-control"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <label for="backpack_color">Backpack Color:</label>
+                <p class='sub-label'>Choose from Blue, Green, Purple, or Red</p>
+                <input type="text" name="backpack_color" value="{{backpack.backpack_color}}" class="form-control">
+            </div>
 
+            <div class="form-group">
+                <label for="recipient_note">Recipient Note:</label>
+                <input type="text" name="recipient_note" value="{{backpack.recipient_note}}" class="form-control">
+            </div>
 
-<div>
-    <a href="/backpacks/{{backpack.id}}" class="btn btn-default">Back</a>
-    <a href="/backpacks" class="btn btn-default">Main Page</a>
-</div>
+            <div class='btn-container'>
+                <input type="submit" value="Submit" class="btn btn-primary edit-submit-btn">
+            </div>
+        </form>
+    </div>
 </div>
 
 <form action="/sessions?_method=DELETE" method="POST">
     <div class='logout-section'>
       <input type="submit" value="Log Out" class="btn btn-default back-to-list-button">
     </div>
-    </form>
+</form>

@@ -495,4 +495,47 @@ td {
   color: black;
 }
 
+a:hover {
+    text-decoration: none;
+}
 
+.edit-form input {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.backpack-contents {
+  background: #ffedcc;
+  padding: 20px;
+}
+
+.backpack-contents input {
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 20%;
+}
+
+.backpack-contents table {
+  padding: 20%;
+}
+
+.sub-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: gray;
+  text-transform: uppercase;
+}
+
+.btn-container {
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.edit-submit-btn {
+  background: #A6D785;
+  color: black;
+  border: 2px solid white;
+}
