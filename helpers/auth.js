@@ -18,16 +18,16 @@ var loginUser = function(req, res, next) {
   })
   .then(function(foundUser){
     if (foundUser == null) {
-      res.json({status: 401, data: "unauthorized"})
+      res.redirect('/sessions/login')
     } else if (bcrypt.compareSync(password, foundUser.password)) {
       req.session.currentUser = foundUser;
     }
     next()
   })
   .catch(function(err){
-    res.json({status: 500, data: err})
+    res.redirect('/sessions/login')
   });
-}
+};
 
 
 // Authorize user to have access
@@ -36,26 +36,11 @@ var authorize = function(req, res, next) {
   if (currentUser.admin === true) {
     next()
   } else if (!currentUser || currentUser._id !== req.params.id ) {
-    res.send({status: 401})
+    res.redirect('/sessions/login')
   } else {
     next()
   }
 };
-
-// Allow only admins access - NEED TO FIX!!!
-// var adminOnly = function(req, res, next) {
-//   var currentUserId = req.params.id;
-//   User.findById(currentUserId)
-//     .exec(function(err,user){
-//       if(err) {
-//         console.log(err)
-//       } else if(user.admin === true) {
-//         next()
-//       } else {
-//         res.send("Sorry, only admins can view this page.");
-//       }
-//     });
-//   };
 
 
 module.exports = {
