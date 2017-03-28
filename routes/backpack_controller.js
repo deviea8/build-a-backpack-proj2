@@ -99,7 +99,8 @@ router.patch('/:backpackId', function(req,res){
             user.save();
             res.render('backpacks/show', {
                 backpack: thisBackpack,
-                userId: req.params.id
+                userId: req.params.id,
+                orgId: req.params.orgId
         });
     });
 });
