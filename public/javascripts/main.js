@@ -178,59 +178,13 @@ var getItemQty = function(itemType) {
   }
 }
 
-var getItemCost = function(itemType) {
-  switch (itemType) {
-    case 'pencils':
-      return (itemCounts.pencils * 1.5);
-      break
-    case 'folders':
-      return (itemCounts.folders * 2.5);
-      break
-    case 'notebooks':
-      return (itemCounts.notebooks * 2);
-      break
-    case 'scissors':
-      return (itemCounts.scissors * 3);
-      break
-    case 'erasers':
-      return (itemCounts.erasers * 0.5);
-      break
-    case 'colored-pencils':
-      return (itemCounts.coloredPencils * 4);
-      break
-    case 'markers':
-      return (itemCounts.markers * 3);
-      break
-    case 'glue-sticks':
-      return (itemCounts.glueSticks * 1);
-  }
-}
 
-
-var itemCost = 2;
 
 var updateOrderSummaryList = function(itemType) {
   var currentItemQty = getItemQty(itemType);
   var itemQtyId = document.getElementById(itemType + '-qty');
   itemQtyId.innerHTML = getItemQty(itemType);
-  var itemCostId = document.getElementById(itemType + '-cost');
-  itemCostId.innerHTML = getItemCost(itemType);
-  updateTotalCost();
 };
-
-var totalCost = 0;
-
-
-//Need to update this
-
-var updateTotalCost = function() {
-  totalCost = 0;
-  for (var i = 0; i < 9; i++) {
-    totalCost += parseFloat(document.getElementsByClassName('cost')[i].innerHTML);
-  }
-  $('.total-cost-input').attr('value', totalCost);
-  $('.total-cost').text('$' + totalCost);
-}
 
 
 var itemCounts = {
