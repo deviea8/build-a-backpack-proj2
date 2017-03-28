@@ -22,7 +22,8 @@ var BackpackSchema = new Schema({
 var UserSchema = new Schema({
     first_name: String,
     last_name: String,
-    email: String,
+    email: {type: String,
+        unique: true},
     street: String,
     city: String,
     state: String,
