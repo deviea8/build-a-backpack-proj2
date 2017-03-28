@@ -326,7 +326,7 @@ td {
   margin-left: 8px;
 }
 
-.backpack-color-hidden-field {
+.hidden-field {
   width: 100px;
   margin: 0 auto;
   visibility: hidden;

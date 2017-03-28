@@ -16,7 +16,8 @@ router.get('/', authHelpers.authorize, function(req, res){
             res.render('backpacks/index', {
                 user: org.users.id(req.params.id),
                 backpacks: org.users.id(req.params.id).backpacks,
-                orgId: org.id
+                orgId: org.id,
+                org: org
         });
     });
 });

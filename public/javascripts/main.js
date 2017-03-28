@@ -228,9 +228,9 @@ var updateTotalCost = function() {
   for (var i = 0; i < 9; i++) {
     totalCost += parseFloat(document.getElementsByClassName('cost')[i].innerHTML);
   }
+  $('.total-cost-input').attr('value', totalCost);
   $('.total-cost').text('$' + totalCost);
 }
-
 
 
 var itemCounts = {
