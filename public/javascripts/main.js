@@ -7,6 +7,7 @@ $('.green-backpack').on('click', greenBackpackSelected)
 $('.blue-backpack').on('click', blueBackpackSelected)
 $('.purple-backpack').on('click', purpleBackpackSelected)
 $('.red-backpack').on('click', redBackpackSelected)
+$(document).ready(checkBackpackColor);
 })
 
 
@@ -203,3 +204,40 @@ var itemCounts = {
   markers: 0,
   glueSticks: 0
 };
+
+
+// Pull in backpack image into index
+
+var checkBackpackColor = function() {
+  var backpackCards = $('.backpack-color')
+  for (var i=0; i<backpackCards.length; i++) {
+    var backpackColor = backpackCards[i].innerHTML;
+    var image = checkColor(backpackColor);
+    backpackCards[i].append(image[0]);
+    console.log(backpackCards[i])
+    console.log(image[0])
+  };
+};
+
+var blueBackpackImage = $('<img src="/images/blue-sm.png">');
+var greenBackpackImage = $('<img src="/images/green-sm.png">');
+var redBackpackImage = $('<img src="/images/red-sm.png">');
+var purpleBackpackImage = $('<img src="/images/purple-sm.png">');
+
+
+var checkColor = function(backpackColor) {
+      switch(backpackColor) {
+        case 'Backpack Color: Blue':
+          return blueBackpackImage;
+          break;
+        case 'Backpack Color: Green':
+          return greenBackpackImage;
+          break;
+        case 'Backpack Color: Red':
+          return redBackpackImage;
+          break;
+        case 'Backpack Color: Purple':
+          return purpleBackpackImage;
+          break;
+      };
+  };

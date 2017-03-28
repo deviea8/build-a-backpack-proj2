@@ -1,18 +1,19 @@
-<h1>Login page</h1>
-{{#if err}}
+<div class='signup-lander-container'>
+  <h1>Log In</h1>
+
+  {{#if err}}
   <p>{{err}}</p>
-{{/if}}
+  {{/if}}
 
-<form action="/sessions/login" method="post">
-  <div>
-    <label for="email">email</label>
-    <input type="text" name="email" required>
-  </div>
-
-  <div>
-    <label for="password">password</label>
-    <input type="password" name="password" required>
-  </div>
-
-  <input type="submit" value="Submit">
-</form>
+  <form action="/sessions/login" method="post">
+    <div>
+      <label for="email">email</label>
+      <input type="text" name="email" required>
+    </div>
+    <div>
+      <label for="password">password</label>
+      <input type="password" name="password" required>
+    </div>
+   <input class='btn' type="submit" value="Submit">
+  </form>
+</div>
