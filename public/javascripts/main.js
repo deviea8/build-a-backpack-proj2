@@ -211,7 +211,7 @@ var checkBackpackColor = function() {
   backpackCards = $('.backpack-color')
   for (var i=0; i<backpackCards.length; i++) {
     var backpackColor = backpackCards[i].innerHTML;
-    var image = checkColor(backpackColor);
+    var image = checkColor(backpackColor).clone();
     backpackCards[i].append(image[0]);
     console.log(backpackCards[i])
     console.log(image[0])
