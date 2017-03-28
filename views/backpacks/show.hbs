@@ -1,30 +1,47 @@
-<h1>{{backpack.backpack_name}}</h1>
-
-  <div>
-      <a href="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}/edit" class="btn btn-primary">Edit Backpack</a>
+<div class='signup-lander-container'>
+  <div class='org-intro'>
+    <div class='back-to-list'><a href="/org/{{orgId}}/users/{{userId}}/backpacks" class="btn btn-default back-to-list-button">BACK TO LIST</a></div>
+    <div class='org-name'>{{backpack.backpack_name}}</div>
   </div>
 
-<h2>Contents</h2>
-  <ul>
-    <li>Pencils: {{backpack.pencils}}</li>
-    <li>Folders: {{backpack.folders}}</li>
-    <li>Notebooks: {{backpack.notebooks}}</li>
-    <li>Scissors: {{backpack.scissors}}</li>
-    <li>Erasers: {{backpack.erasers}}</li>
-    <li>Colored Pencils: {{backpack.colored_pencils}}</li>
-    <li>Markers: {{backpack.markers}}</li>
-    <li>Glue Sticks: {{backpack.glue_sticks}}</li>
-  </ul>
+  <div class='main-backpack-container'>
+  <div class='show-container'>
+    <div class='color-message-buttons'>
+        <div class='backpack-color-show'><span class='backpack-color-label'>Backpack Color:</span> {{backpack.backpack_color}}</div>
+        <div class='button-section'>
+        <div>
+          <a href="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}/edit" class="btn btn-primary edit-button">Edit Backpack</a>
+        </div>
+        <form action="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}?_method=DELETE" method="POST">
+          <input type="submit" value="Delete Backpack" class="btn btn-danger delete-button" />
+        </form>
+        </div>
+      </div>
+    <div class='contents'>
+      <div class='org-name-header'>Contents</div>
+        <div class='list-of-contents'>
+            <div>Pencils: {{backpack.pencils}}</div>
+            <div>Folders: {{backpack.folders}}</div>
+            <div>Notebooks: {{backpack.notebooks}}</div>
+            <div>Scissors: {{backpack.scissors}}</div>
+            <div>Erasers: {{backpack.erasers}}</div>
+            <div>Colored Pencils: {{backpack.colored_pencils}}</div>
+            <div>Markers: {{backpack.markers}}</div>
+            <div>Glue Sticks: {{backpack.glue_sticks}}</div>
+        </div>
+        <hr>
+        <div class='org-name-header'>Message to Recipient</div>
+          <div class='message-section'>
+          {{backpack.recipient_note}}
+          </div>
+    </div>
 
-<h3>Backpack Color</h3>
-{{backpack.backpack_color}}
-
-
-<h3>Message to Recipient</h3>
-{{backpack.recipient_note}}
-
-<form action="/org/{{orgId}}/users/{{userId}}/backpacks/{{backpack.id}}?_method=DELETE" method="POST">
-    <input type="submit" value="DELETE" class="btn btn-danger" />
+  </div>
+</div>
+</div>
+<form action="/sessions?_method=DELETE" method="POST">
+    <div class='logout-section'>
+      <input type="submit" value="Log Out" class="btn btn-default back-to-list-button">
+    </div>
 </form>
 
-<a href="/org/{{orgId}}/users/{{userId}}/backpacks/" class="btn btn-default">Main Page</a>

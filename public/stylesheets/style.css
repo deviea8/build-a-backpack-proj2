@@ -327,6 +327,7 @@ td {
 
 .back-to-list {
   float: left;
+  position: absolute;
 }
 
 .back-to-list-button {
@@ -428,3 +429,70 @@ td {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.logout-section {
+  float: right;
+}
+
+/* Backpack show page */
+.show-container {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  margin: 4%;
+  flex-direction: row;
+}
+
+.contents {
+  width: 50%;
+  border: 4px solid #A6D785;
+  padding: 10px;
+}
+
+.color-message-buttons {
+  width: 50%;
+  padding: 10px;
+}
+
+.main-backpack-container {
+  display: flex;
+}
+
+.list-of-contents {
+  margin-bottom: 30px;
+}
+
+.message-section {
+  margin: 7%;
+  padding: 2%;
+  background: #f6f6f6;
+}
+
+.backpack-color-label {
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: gray;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-button {
+  background-color: #A6D785;
+  border: none;
+  color: black;
+  margin-top: 30px;
+}
+
+.delete-button {
+  background-color: #A6D785;
+  border: none;
+  color: black;
+}
+
+

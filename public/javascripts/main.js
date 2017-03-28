@@ -8,8 +8,8 @@ $('.blue-backpack').on('click', blueBackpackSelected)
 $('.purple-backpack').on('click', purpleBackpackSelected)
 $('.red-backpack').on('click', redBackpackSelected)
 $(document).ready(checkBackpackColor);
+$(document).ready(displayBackpackImage);
 })
-
 
 // Change backpack image based on user selection
 var greenBackpackSelected = function() {
@@ -208,7 +208,7 @@ var itemCounts = {
 
 // Pull in backpack image into index
 var checkBackpackColor = function() {
-  var backpackCards = $('.backpack-color')
+  backpackCards = $('.backpack-color')
   for (var i=0; i<backpackCards.length; i++) {
     var backpackColor = backpackCards[i].innerHTML;
     var image = checkColor(backpackColor);
@@ -220,10 +220,10 @@ var checkBackpackColor = function() {
 
 
 // Backpack images
-var blueBackpackImage = $('<img src="/images/blue-sm.png">');
-var greenBackpackImage = $('<img src="/images/green-sm.png">');
-var redBackpackImage = $('<img src="/images/red-sm.png">');
-var purpleBackpackImage = $('<img src="/images/purple-sm.png">');
+var blueBackpackImage = $('<div><img src="/images/blue-sm.png"></div>');
+var greenBackpackImage = $('<div><img src="/images/green-sm.png"></div>');
+var redBackpackImage = $('<div><img src="/images/red-sm.png"></div>');
+var purpleBackpackImage = $('<div><img src="/images/purple-sm.png"></div>');
 
 
 var checkColor = function(backpackColor) {
@@ -242,3 +242,16 @@ var checkColor = function(backpackColor) {
           break;
       };
   };
+
+
+// Display backpack image on show page
+var displayBackpackImage = function() {
+  var backpackColorMention = $('.backpack-color-show');
+  console.log(backpackColorMention)
+  var backpackColor = backpackColorMention[0].outerText;
+  console.log(backpackColor)
+  var image = checkColor(backpackColor);
+  backpackColorMention.append(image[0]);
+  console.log(backpackCards[i])
+  console.log(image[0])
+}
