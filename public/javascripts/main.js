@@ -11,6 +11,7 @@ $(document).ready(checkBackpackColor);
 $(document).ready(displayBackpackImage);
 })
 
+
 // Change backpack image based on user selection
 var greenBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(/images/green-sm.png)');
@@ -38,20 +39,20 @@ var redBackpackSelected = function() {
   $('#tag').text('Red');
   $('#backpack-type').text('Red Backpack');
   $('.backpack-color-input').attr('value','Red');
-}
+};
 
 
 // Increment or decrement value based on current
 var checkIncrementItemType = function() {
   incrementValue(this.value);
   updateOrderSummaryList(this.value);
-}
+};
 
 var checkDecrementItemType = function() {
   decrementValue(this.value);
   console.log(this.value);
   updateOrderSummaryList(this.value);
-}
+};
 
 
 // Increment value for item when user clicks + button
@@ -81,8 +82,8 @@ var incrementValue = function(itemType) {
       break;
     case 'glue-sticks':
       $('.glue-sticks-value').val((++itemCounts.glueSticks));
-  }
-}
+  };
+};
 
 
 // Decrement value for item when user clicks - button
@@ -150,9 +151,9 @@ var decrementValue = function(itemType) {
       }
       else {
       console.log("Can't decrement below 0");
-      }
-  }
-}
+    };
+  };
+};
 
 
 // Check current quantity for each item
@@ -181,8 +182,8 @@ var getItemQty = function(itemType) {
       break
     case 'glue-sticks':
       return itemCounts.glueSticks;
-  }
-}
+  };
+};
 
 
 // Update quantity for each item in order summary
@@ -206,15 +207,13 @@ var itemCounts = {
 };
 
 
-// Pull in backpack image into index
+// Pull in backpack image into index page
 var checkBackpackColor = function() {
   backpackCards = $('.backpack-color')
   for (var i=0; i<backpackCards.length; i++) {
     var backpackColor = backpackCards[i].innerHTML;
     var image = checkColor(backpackColor).clone();
     backpackCards[i].append(image[0]);
-    console.log(backpackCards[i])
-    console.log(image[0])
   };
 };
 
@@ -247,11 +246,7 @@ var checkColor = function(backpackColor) {
 // Display backpack image on show page
 var displayBackpackImage = function() {
   var backpackColorMention = $('.backpack-color-show');
-  console.log(backpackColorMention)
   var backpackColor = backpackColorMention[0].outerText;
-  console.log(backpackColor)
   var image = checkColor(backpackColor);
   backpackColorMention.append(image[0]);
-  console.log(backpackCards[i])
-  console.log(image[0])
-}
+};

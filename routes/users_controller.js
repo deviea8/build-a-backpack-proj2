@@ -57,7 +57,7 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
 })
 
 
-// Admin dashboard page - ADD ADMIN ONLY!!!!
+// Admin dashboard page
 router.get('/:id/dashboard', function(req,res){
 var orgId = req.params.orgId;
 var userId = req.params.id;
