@@ -13,28 +13,28 @@ $(document).ready(checkBackpackColor);
 
 // Change backpack image based on user selection
 var greenBackpackSelected = function() {
-  $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=37069638)');
+  $('#backpack-image').css('background-image', 'url(/images/green-sm.png)');
   $('#tag').text('Green');
   $('#backpack-type').text('Green Backpack');
   $('.backpack-color-input').attr('value','Green');
 }
 
 var blueBackpackSelected = function() {
-  $('#backpack-image').css('background-image', 'url(https://s-media-cache-ak0.pinimg.com/736x/6f/0d/a4/6f0da48be5de51944ddc044cbff469cc.jpg)');
+  $('#backpack-image').css('background-image', 'url(/images/blue-sm.png)');
   $('#tag').text('Blue');
   $('#backpack-type').text('Blue Backpack');
   $('.backpack-color-input').attr('value','Blue');
 }
 
 var purpleBackpackSelected = function() {
-  $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=68056220)');
+  $('#backpack-image').css('background-image', 'url(/images/purple-sm.png)');
   $('#tag').text('Purple');
   $('#backpack-type').text('Purple Backpack');
   $('.backpack-color-input').attr('value','Purple');
 }
 
 var redBackpackSelected = function() {
-  $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=72028988)');
+  $('#backpack-image').css('background-image', 'url(/images/red-sm.png)');
   $('#tag').text('Red');
   $('#backpack-type').text('Red Backpack');
   $('.backpack-color-input').attr('value','Red');
@@ -207,7 +207,6 @@ var itemCounts = {
 
 
 // Pull in backpack image into index
-
 var checkBackpackColor = function() {
   var backpackCards = $('.backpack-color')
   for (var i=0; i<backpackCards.length; i++) {
@@ -219,6 +218,8 @@ var checkBackpackColor = function() {
   };
 };
 
+
+// Backpack images
 var blueBackpackImage = $('<img src="/images/blue-sm.png">');
 var greenBackpackImage = $('<img src="/images/green-sm.png">');
 var redBackpackImage = $('<img src="/images/red-sm.png">');

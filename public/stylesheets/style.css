@@ -188,9 +188,9 @@ ul {
 }
 
 .backpack #backpack-image {
-  height: 300px;
-  width: 250px;
-  background-image: url(https://s-media-cache-ak0.pinimg.com/736x/6f/0d/a4/6f0da48be5de51944ddc044cbff469cc.jpg);
+  height: 400px;
+  width: 300px;
+  background-image: url('/images/blue-sm.png');
   background-size: contain;
   background-repeat: no-repeat;
   margin: auto;
