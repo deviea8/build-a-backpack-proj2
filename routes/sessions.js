@@ -16,6 +16,7 @@ router.get('/login', function(req, res) {
 // Authorize & log in user
 router.post('/login', authHelpers.loginUser, function(req, res){
   console.log(req.session);
+  if (req.session.currentUser ) {
   var orgId = req.session.currentUser.org;
   var userId = req.session.currentUser.id;
 
@@ -30,6 +31,9 @@ router.post('/login', authHelpers.loginUser, function(req, res){
           res.redirect('/org/' + orgId + '/users/' + userId + '/dashboard');
         };
     });
+  } else {
+    res.redirect('/sessions/login')
+  }
 });
 
 
