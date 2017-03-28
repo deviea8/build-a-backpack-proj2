@@ -31,6 +31,36 @@ a {
   flex-direction: row;
 }
 
+
+/* Homepage */
+.jumbotron {
+  height: 450px;
+  background: url('https://www.boardofchildcare.org/wp-content/uploads/2016/07/School-Supply.jpg');
+  opacity: 0.7;
+  background-size: cover;
+  color: black;
+}
+
+.jumbotron-headline {
+  font-size: 35px;
+  margin: 30px;
+  padding: 10px;
+  background: orange;
+  width: 70%;
+  opacity: 0.85;
+  margin-top: 8%;
+  font-weight: bold;
+}
+
+.jumbotron .btn {
+  margin-left: 30px;
+  background: #BCED91;
+  border: 2px solid black;
+  color: black;
+}
+
+
+
 /* Split lander */
 
 .signup-lander-container {
