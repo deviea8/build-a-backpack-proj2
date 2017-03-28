@@ -1,5 +1,4 @@
 <div class="signup-lander-container">
-
   <div class='org-name-dashboard'>{{org.org_name}}</div>
   <div class='backpack-drive-title'>Backpack Drive Dashboard</div>
   <div class='pledge-list'>
@@ -23,7 +22,7 @@
       </table>
     </div>
     <div class='invite-section'>
-      <div class='org-name-header'>Invite participants</div>
+      <div class='org-name-header'>Share your drive</div>
         <p>Invite members of your organization, friends, and family to participate your backpack drive!</p>
         <a href='https://www.facebook.com/sharer/sharer.php?u=https%3A//sleepy-headland-48709.herokuapp.com/org/{{org.id}}' target=_blank><button class='btn select-org-button'>Share on Facebook</button></a>
     </div>
@@ -66,19 +65,16 @@
       </tbody>
     </table>
   </div>
-
-    <div>
+  <div>
   {{#each org.backpacks}}
-  <div class="dashboard-backpack-info">
-  <li>{{this}}</li>
-  </div>
+    <div class="dashboard-backpack-info">
+      <li>{{this}}</li>
+    </div>
   {{/each}}
   </div>
-
+</div>
+<form action="/sessions?_method=DELETE" method="POST">
+  <div class='logout-section'>
+    <input type="submit" value="Log Out" class="btn btn-default back-to-list-button">
   </div>
-
-  <form action="/sessions?_method=DELETE" method="POST">
-    <div class='logout-section'>
-      <input type="submit" value="Log Out" class="btn btn-default back-to-list-button">
-    </div>
-    </form>
+</form>
