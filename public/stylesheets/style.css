@@ -111,6 +111,8 @@ a {
   font-weight: bolder;
   color: gray;
   margin-bottom: 5px;
+  margin-top: 5px;
+  text-transform: uppercase;
 }
 
 .submit-btn {
@@ -357,8 +359,8 @@ td {
 }
 
 .list-of-donors {
-  width: 40%;
-  border: 5px solid #ffedcc;
+  width: 50%;
+  border: 5px solid #A6D785;
   font-size: 15px;
 }
 
@@ -366,3 +368,38 @@ td {
   text-transform: lowercase;
 }
 
+
+.org-name-dashboard {
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: gray;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.backpack-drive-title {
+  font-size: 30px;
+}
+
+.pledge-list {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.invite-section {
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.section-header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.backpack-summary-table {
+  margin: 25px;
+}
