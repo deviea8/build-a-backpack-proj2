@@ -6,11 +6,12 @@ var authHelpers = require('../helpers/auth.js')
 
 // Render login page
 router.get('/login', function(req, res) {
-  var orgId = req.params.orgId
+  var orgId = req.params.orgId;
   res.render('users/login', {
     orgId: orgId
-  })
+  });
 });
+
 
 // Authorize & log in user
 router.post('/login', authHelpers.loginUser, function(req, res){
@@ -21,20 +22,21 @@ router.post('/login', authHelpers.loginUser, function(req, res){
     User.findById(userId)
       .exec(function(err, user) {
         if (user.admin !== true) {
-          // route to backpack index
+          // Route to backpack index
           res.redirect('/org/' + orgId + '/users/' + userId + '/backpacks');
         }
         else {
-          // route to admin dashboard
+          // Route to admin dashboard
           res.redirect('/org/' + orgId + '/users/' + userId + '/dashboard');
         };
     });
 });
 
+
 // End session
 router.delete('/', function(req, res){
   req.session.destroy(function() {
-    res.redirect('/users')
+    res.redirect('/users');
   });
 });
 

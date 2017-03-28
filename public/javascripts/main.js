@@ -1,16 +1,16 @@
 $(function() {
 
+// Click listeners
 $('.button-plus').on('click', checkIncrementItemType)
 $('.button-minus').on('click', checkDecrementItemType)
 $('.green-backpack').on('click', greenBackpackSelected)
 $('.blue-backpack').on('click', blueBackpackSelected)
 $('.purple-backpack').on('click', purpleBackpackSelected)
 $('.red-backpack').on('click', redBackpackSelected)
-
 })
 
 
-
+// Change backpack image based on user selection
 var greenBackpackSelected = function() {
   $('#backpack-image').css('background-image', 'url(http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=37069638)');
   $('#tag').text('Green');
@@ -40,11 +40,20 @@ var redBackpackSelected = function() {
 }
 
 
+// Increment or decrement value based on current
 var checkIncrementItemType = function() {
   incrementValue(this.value);
   updateOrderSummaryList(this.value);
 }
 
+var checkDecrementItemType = function() {
+  decrementValue(this.value);
+  console.log(this.value);
+  updateOrderSummaryList(this.value);
+}
+
+
+// Increment value for item when user clicks + button
 var incrementValue = function(itemType) {
   switch (itemType) {
     case 'pencils':
@@ -75,12 +84,7 @@ var incrementValue = function(itemType) {
 }
 
 
-var checkDecrementItemType = function() {
-  decrementValue(this.value);
-  console.log(this.value);
-  updateOrderSummaryList(this.value);
-}
-
+// Decrement value for item when user clicks - button
 var decrementValue = function(itemType) {
   switch (itemType) {
     case 'pencils':
@@ -150,6 +154,7 @@ var decrementValue = function(itemType) {
 }
 
 
+// Check current quantity for each item
 var getItemQty = function(itemType) {
   switch (itemType) {
     case 'pencils':
@@ -179,7 +184,7 @@ var getItemQty = function(itemType) {
 }
 
 
-
+// Update quantity for each item in order summary
 var updateOrderSummaryList = function(itemType) {
   var currentItemQty = getItemQty(itemType);
   var itemQtyId = document.getElementById(itemType + '-qty');
@@ -187,6 +192,7 @@ var updateOrderSummaryList = function(itemType) {
 };
 
 
+// Item counters
 var itemCounts = {
   pencils: 0,
   folders: 0,
@@ -197,5 +203,3 @@ var itemCounts = {
   markers: 0,
   glueSticks: 0
 };
-
-

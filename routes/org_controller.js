@@ -16,11 +16,11 @@ router.get('/', function(req, res) {
   });
 });
 
+
 // Create new org page
 router.get('/new', function(req, res){
   res.render('orgs/new');
 });
-
 
 
 // Individual organization show page
@@ -53,5 +53,6 @@ router.post('/', function(req, res){
     res.redirect('/org/' + newOrgId + '/users/signup-admin');
   });
 });
+
 
 module.exports = router;

@@ -153,8 +153,3 @@ orgTwo.save(function(err) {
 });
 
 
-// Set up relationships
-
-
-
-

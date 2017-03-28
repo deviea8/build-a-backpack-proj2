@@ -73,6 +73,7 @@ router.get('/:backpackId/edit', function(req,res) {
     });
 });
 
+
 // Patch/update backpack after edit
 router.patch('/:backpackId', function(req,res){
     Org.findById(req.params.orgId)
@@ -99,7 +100,7 @@ router.patch('/:backpackId', function(req,res){
             res.render('backpacks/show', {
                 backpack: thisBackpack,
                 userId: req.params.id
-            });
+        });
     });
 });
 
@@ -128,8 +129,8 @@ router.get('/:backpackId', function(req, res) {
                 backpack: org.users.id(req.params.id).backpacks.id(req.params.backpackId),
                 userId: req.params.id,
                 orgId: req.params.orgId
-            });
         });
+    });
 });
 
 

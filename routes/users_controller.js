@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
     res.render('users/index.hbs', {
       users: users,
       currentUser: req.session.currentUser
-    })
+    });
   });
 })
 
@@ -52,7 +52,6 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log(user);
-    // res.render('user/show.hbs', { user: user } );
     res.render('users/show.hbs', { user } );
   });
 })
