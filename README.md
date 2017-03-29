@@ -8,7 +8,6 @@ A web app that enables organizations to run and manage backpack drives, all onli
 
 [GitHub Repo] (https://github.com/deviea8/build-a-backpack-proj2)
 
-[App Wireframe](https://drive.google.com/file/d/0B9p6hJKmZMZEVmxzQy1pTTJMckU/view?usp=sharing)
 
 ## App Overview
 
