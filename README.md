@@ -4,9 +4,9 @@
 
 A web app that enables organizations to run and manage backpack drives, all online.
 
-[Heroku Link] (https://sleepy-headland-48709.herokuapp.com/)
+Heroku Link: https://sleepy-headland-48709.herokuapp.com/
 
-[GitHub Repo] (https://github.com/deviea8/build-a-backpack-proj2)
+GitHub Repo: https://github.com/deviea8/build-a-backpack-proj2
 
 
 ## App Overview
