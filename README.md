@@ -6,110 +6,69 @@ A web app that enables organizations to run and manage backpack drives, all onli
 
 [Heroku Link] (https://sleepy-headland-48709.herokuapp.com/)
 
+[GitHub Repo] (https://github.com/deviea8/build-a-backpack-proj2)
+
 [App Wireframe](https://drive.google.com/file/d/0B9p6hJKmZMZEVmxzQy1pTTJMckU/view?usp=sharing)
 
 ## App Overview
 
-Goal Digger is an application intended to keep track of weekly goals, where the user can assign points to each goal.
-1  = Easy to accomplish
-5  = Medium difficulty to accomplish
-10 = Hard to accomplish
+Backpack drives are an important and meaningful way to collect donated backpacks and school supplies for students in a community whose families can't afford supplies that equip them to do well in school. 
 
-By assigning points to this goals, the user can weight the difficulty of being accomplished. At the same time, the user can create rewards and assign points as well.
+Companies, schools, and other organizations often run backpack drives, but the typical ask is for participants to take a list of needed supplies, go to the store and purchase the backpacks and supplies independently, then drop off the items in a physical donation box. The problem is, people are busy and forget to purchase supplies due to the time involved. Not to mention the fact that it may be difficult or inconvenient to bring the supplies back to the donation box. Organizers are left trying to coordinate and manage how many supplies they've collected.
 
-The intention of this app is to keep track of the points accumulated by accomplish goals and keeping track of how many points are needed to claim a reward.
+Build a Backpack aims to make the process of running a backpack drive simple, by making them digital.
 
-## Unsolved features:
+Here's how it works:
+1) Organizers create a backpack drive on behalf of their organization
+2) Organizers create a 'Drive Manager' account, which gives them access to their organization's backpack drive dashboard
+3) Participants sign up, indicating which organization they are a part of
+4) Participants build a backpack online, deciding which supplies and quantity of each they want to include. They also select their backpack color and add a personal note to the recipient.
+5) Organizers can log in to their account and see an up-to-date list of all participants' backpacks from their organization on their dashboard.
+6) Organizers can then purchase all supplies needed for the created backpacks and follow up with participants to collect payment.
 
-* Points are not being added
-* UPDATE is not working because I was not able to extract a goal id from the array of goals
-* Points for rewards are not being added
-* Just as goals, I cannot update rewards
-* Due date is including local time and I wish to show the date only
-* Couldn't have all users page. This page is supposed to show other users points only.
+
+## Technologies/Frameworks/Packages used
+
+* HTML5
+* CSS
+* JavaScript
+* jQuery
+* Node.js
+* Express.js
+* MongoDB.js
+* Mongoose
+* BodyParser
+* MethodOverride
+
+## Approach Taken
+
+I began the project really thinking about how to structure my databases and schemas since this app has 3 separate controllers (organizations, users, and backpacks). I wireframed the user flow, carefully considering dependencies at each step. I decided that for ease of use, organizations should be required to be created prior to user signup. This ensures that all users are members of an organization. From there, I started by building the backpack CRUD methods/user flow first ("MVP" version). Then as I added new controllers to the mix, I refactored the prior code to tie everything together. Last, I styled the web app and created a home page.
+
+
+## Future goals / unsolved features:
+
+* Calculate price dynamically based on backpack contents
+* Use authentication to ensure that admins can only view the dashboard for THEIR organization
+* Dropdown for backpack color on edit page (currently a text field)
+* Require a unique email address during signup (duplicates are currently allowed)
+* Incorporate a shopping cart / checkout so that participants can buy the backpacks they've created right then and there
+* Put limits on the maximum and minimum number of items that need to be included in each backpack (to ensure that all backpacks have similar value)
+
 
 ## User Stories
 
-As a user I would like to:
-* Create an account
-* Successfully login
-* User can see other users points only
-* Create goals
-* Edit goals later if possible
-* Have a deadline to accomplish those goals
-* Have a record history of what I have accomplished
-* Have a record history of my rewards
-* Edit my rewards and add more points if possible
-* Delete a goal if not longer want it // same with a reward
-* See how many points away I am from my rewards
-* Successfully logout and login again without any issues
-
-## Stretch Goals
-
-* Reminders when login in
-* Inspirational quotes
-* Choose Between Monthly and Weekly
-* Special trophies for hard goals or long term goals
-* Create another page for other users to see (restricted)// If user if matches...
+[View Trello Board](https://trello.com/b/TUAhdoKR/build-a-backpack)
 
 ## Entity Relationship Diagrams (Database Modeling)
 
-User = {
-  username: String,
-  password: String,
-  goals: [goalSchema],
-  rewards:[rewardSchema],
-  totalPoints: Number,
-}
+[View ERD](https://drive.google.com/file/d/0B9y_Lq3LVbmyNGVaZFVEUXpKaEE/view?usp=sharing)
 
-Goal = {
-  goalPoints:Number,
-  completed: Boolean,
-  deadline: Date,
-  body: String
-}
+## Wireframes
 
-Reward = {
-  rewardPoints: Number,
-  achieved: Boolean,
-  bodyReward: String
-}
+[View Wireframes](https://drive.google.com/file/d/0B9y_Lq3LVbmyY1N6RjlCU0RabTA/view?usp=sharing)
 
-## FOLDERS
+## Portfolio Site
+My portfolio site has been updated to include a link to Build a Backpack.
+[View Portfolio Site](https://htmlpreview.github.io/?https://github.com/deviea8/portfolio-site/blob/master/index.html)
 
-### Public
 
-* CSS file includes:
- * style.css as a main css stylesheet file
- * reset.css code to help maintain consistency across multiple browsers. Source code taken from: http://meyerweb.com/eric/tools/css/reset/reset.css
-
-### Models
-
-* user.js includes:
-* reward.js
-* goal.js
-
-### Controllers
-
-* index.js: Includes the main route to "/" index page, which is the homepage.
-* users.js: Includes authentication, routes to user's page and routes to user's goals and rewards.
-
-### Views
-
-* Layout: Includes header and footer
-* Homepage: Main page, where users can create an account and login
-* User: User's main page with boards of created goals and rewards
-* Show: Includes show page for a single goals
-* All Users: Page where all users can be displayed showing only their points (NOT WORKING)
-
-### Copyrights
-
-Art used:
-Logo on header:
-http://vignette2.wikia.nocookie.net/inanimateinsanity/images/e/e2/TrophyPro.png
-
-Number 1 Medal on goal board:
-http://carton2garden.com/wp-content/themes/carton2garden/assets/img/1st-place.png
-
-Small trophy on rewards board:
-http://www.clipartkid.com/images/758/trophy-icon-black-clipart-panda-free-clipart-images-H6GJZs-clipart.png
