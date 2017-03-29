@@ -2,7 +2,7 @@
 
 .main-container {
   padding: 50px;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -34,29 +34,106 @@ a {
 
 /* Homepage */
 .jumbotron {
-  height: 450px;
-  background: url('https://www.boardofchildcare.org/wp-content/uploads/2016/07/School-Supply.jpg');
-  opacity: 0.7;
+  height: 500px;
+  background: url('/images/students.png');
+  opacity: 0.8;
   background-size: cover;
   color: black;
 }
 
 .jumbotron-headline {
-  font-size: 35px;
-  margin: 30px;
-  padding: 10px;
-  background: orange;
-  width: 70%;
-  opacity: 0.85;
-  margin-top: 8%;
+  font-size: 40px;
+  background: #ffd27f;
+  opacity: 0.75;
+  padding: 3px;
   font-weight: bold;
 }
 
-.jumbotron .btn {
-  margin-left: 30px;
+.jumbotron-contents {
+  width: 60%;
+  margin: 40px;
+  margin-top: 90px;
+}
+
+.btn-lg {
+  margin-left: 40px;
   background: #BCED91;
-  border: 2px solid black;
+  border: 3px solid #BCED91;
   color: black;
+}
+
+.btn-lg:hover {
+  background: orange;
+  border: 3px solid orange;
+}
+
+.computer-image, .promo-image {
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  background: url('/images/computer.png');
+  background-size: cover;
+  flex-direction: row;
+}
+
+.promo-image {
+  background: url('http://www.pasadenanow.com/main/wp-content/uploads/2014/09/photo1.jpg');
+  background-size: cover;
+}
+
+.screen-text, .promo-text {
+  height: 300px;
+  width: 100%;
+  flex-direction: row;
+  padding: 70px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  color: gray;
+}
+
+.screen-text {
+  text-align: left;
+}
+
+.promo-text {
+  text-align: right;
+}
+
+.screen-section, .copy-section {
+  display: flex;
+  margin-top: 80px;
+  align-items: center;
+  justify-content: center
+}
+
+.homepage-container {
+  border: 4px solid #D3D3D3;
+}
+
+.screen-text h2 {
+  text-align: left;
+}
+
+.copy-section {
+  margin-top: 140px;
+  border: 2px solid #D3D3D3;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: black;
+}
+
+.bottom-section {
+  width: 100%;
+  height: 150px;
+  background: #ffedcc;
+  font-size: 25px;
+  opacity: 0.8;
+  text-align: center;
+  padding-top: 5%;
 }
 
 
