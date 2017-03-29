@@ -27,7 +27,7 @@ router.get('/new', function(req, res){
 router.get('/:orgId', function(req, res) {
   Org.findById(req.params.orgId)
   .exec(function(err, org) {
-    if (err) console.log(err);
+    if (err) {console.log(err)};
     console.log(org);
     // res.render('user/show.hbs', { user: user } );
     res.render('orgs/show', {
